@@ -1,19 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags always come first -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <title>NoteFire - BackboneFire</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../common/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
   </head>
-  <body>
-    <h1>Hello, world!</h1>
 
-    <!-- jQuery first, then Bootstrap JS. -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+  <body>
+
+    <div class="navbar-collapse collapse inverse" id="navbar-header">
+      <!-- GitHub ribbon -->
+      <a href="https://github.com/bobzurad/NoteFire">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+      </a>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-5 col-sm-offset-1">
+            <h2>AngularFire</h2>
+            <p>View the NoteFire app, powered by AngularFire.</p>
+            <p><a class="btn btn-secondary" href="/angularfire" role="button">View app</a></p>
+         </div>
+          <div class="col-sm-5">
+            <h2>EmberFire</h2>
+            <p>View the NoteFire app, powered by EmberFire.</p>
+            <p><a class="btn btn-secondary disabled" href="#" role="button">Coming soon</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar navbar-static-top navbar-dark bg-inverse">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">
+          &#9776;
+        </button>
+        <a href="/" class="navbar-brand">NoteFire</a>
+        &nbsp;
+        <span class="small pull-xs-right">BackboneFire</span>
+      </div>
+    </div>
+
+    <div class="album text-muted">
+      <div class="container">
+
+        <div class="row">
+          <div class="card col-md-4">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card col-md-4">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card col-md-4">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+
+          <div class="card col-md-4">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card col-md-4">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card col-md-4">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+
+          <div class="card col-md-4">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card col-md-4">
+            <img data-src="holder.js/100px280/thumb" alt="Card image cap">
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p>This app created by <a href="https://twitter.com/bobzurad">Bob Zurad</a></p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../common/libs/jquery/jquery.js"></script>
+    <!-- Bootstrap 4-alpha2 requires Tether, apparently...getting error in bootstrap.js saying so... -->
+    <script src="../common/libs/tether/js/tether.js"></script>
+    <script src="../common/libs/bootstrap/js/bootstrap.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../common/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
