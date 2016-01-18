@@ -1,6 +1,6 @@
 define(
-  ['jquery', 'backbone'],
-  function($, Backbone) {
+  ['jquery', 'backbone', 'collections/notes', 'models/note', 'views/home', 'views/newNote'],
+  function($, Backbone, NotesCollection, NoteModel, HomeView, NewNoteView) {
     'use strict';
 
     var Workspace = Backbone.Router.extend({
@@ -14,15 +14,16 @@ define(
 
       initialize: function() {
         //this function runs on every page load
-
+        this.HomeView = new HomeView({ collection: NotesCollection });
+        this.NewNoteView = new NewNoteView({ model: NoteModel });
       },
 
       defaultRoute: function() {
-
+        this.HomeView.render();
       },
 
       newRoute: function() {
-
+        this.NewNoteView.render();
       },
 
       detailRoute: function(id) {
