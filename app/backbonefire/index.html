@@ -9,10 +9,7 @@
 
     <title>NoteFire - BackboneFire</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="../common/libs/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link href="css/main.css" rel="stylesheet">
   </head>
 
@@ -25,7 +22,7 @@
       </a>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-5 col-sm-offset-1">
+          <div class="col-sm-5">
             <h2>AngularFire</h2>
             <p>View the NoteFire app, powered by AngularFire.</p>
             <p><a class="btn btn-secondary" href="/angularfire" role="button">View app</a></p>
@@ -34,6 +31,9 @@
             <h2>EmberFire</h2>
             <p>View the NoteFire app, powered by EmberFire.</p>
             <p><a class="btn btn-secondary disabled" href="#" role="button">Coming soon</a></p>
+          </div>
+          <div class="col-sm-1">
+            <p><a id="homeButton" class="btn btn-secondary" href="/" role="button">Home</a></p>
           </div>
         </div>
       </div>
@@ -44,9 +44,9 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header">
           &#9776;
         </button>
-        <a href="/" class="navbar-brand">NoteFire</a>
-        &nbsp;
+        <a href="#/" class="navbar-brand">NoteFire</a>
         <span class="small pull-xs-right">BackboneFire</span>
+        <a id="newNoteButton" type="button" class="btn btn-secondary btn-sm pull-xs-right" href="#/new">+ New Note</a>
       </div>
     </div>
 
@@ -99,14 +99,8 @@
       </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../common/libs/jquery/jquery.js"></script>
-    <!-- Bootstrap 4-alpha2 requires Tether, apparently...getting error in bootstrap.js saying so... -->
-    <script src="../common/libs/tether/js/tether.js"></script>
-    <script src="../common/libs/bootstrap/js/bootstrap.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../common/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- NoteFire app -->
+    <script src="js/globalHelpers.js"></script>
+    <script data-main="js/main" src="libs/requirejs/require.js"></script>
   </body>
 </html>
