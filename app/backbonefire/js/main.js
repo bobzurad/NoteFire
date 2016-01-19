@@ -22,26 +22,26 @@
       },
       tether: { exports: 'Tether' },
       bootstrap : { deps: ['jquery'] },
-//      backbonefire: { deps: ['backbone'] },
+      backbonefire: { deps: ['backbone'] },
     },
     paths: {
       jquery: '../../common/libs/jquery/jquery',
       tether: '../../common/libs/tether/js/tether',
+      notefirecommon: '../../common/js/common',
       bootstrap: '../../common/libs/bootstrap/js/bootstrap',
       underscore: '../libs/underscore/underscore',
       backbone: '../libs/backbone/backbone',
       text: '../libs/requirejs/text',
-//      firebase: '../libs/firebase-debug',
-//      backbonefire: '../libs/backbonefire',
+      firebase: '../libs/firebase/firebase-debug',
+      backbonefire: '../libs/backbonefire/backbonefire',
     }
   });
 
   //main require for NoteFire app
   require(
     ['backbone', 'routers/router', 'bootstrap'],
-    function (Backbone, Workspace) {
+    function (Backbone, Router) {
       //Initialize and start NoteFire app
-      new Workspace();
       Backbone.history.start();
     }
   );

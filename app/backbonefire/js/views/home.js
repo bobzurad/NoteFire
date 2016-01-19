@@ -10,13 +10,12 @@ define(
 
       //this runs on page load
       initialize: function() {
-        this.listenTo(this.collection, 'sync', this.renderNotes);
+
       },
 
       render: function() {
-        this.collection.fetch();  //TODO: remove this when we start using Firebase
         this.$el.html(this.template());
-
+        this.listenTo(this.collection, 'sync', this.renderNotes);
         this.$noteViewsContainer = $("#noteViewsContainer");
 
         if (this.$noteViewsContainer.children().length === 0 && this.collection.length > 0) {
