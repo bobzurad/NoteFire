@@ -37,13 +37,14 @@ define(
           content: this.$el.find("#content").val(),
         });
 
+        this.clearErrors();
+
         //perform validation and save
         if (this.model.isValid()) {
           //if the collection contains a model with the same .attributes.id,
           //firebase will update the existing model in the colleciton, rather than add a new model
           Notes.create(this.model.attributes);
 
-          this.clearErrors();
           this.router.navigate("#/", { trigger: true });
         }
       },
