@@ -50,6 +50,8 @@ footer p {
   margin-right: 20px;
 }
 
-#homeButton {
-  margin-top: 107px;
+@media(min-width: 544px) {
+  #homeButton {
+    margin-top: 107px;
+  }
 }

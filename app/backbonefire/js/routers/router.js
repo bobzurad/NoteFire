@@ -14,15 +14,15 @@ define(
 
       initialize: function() {
         //this function runs on every page load
+        this.HomeView = new HomeView({ collection: NotesCollection });
+        this.NewNoteView = new NewNoteView();
       },
 
       defaultRoute: function() {
-        this.HomeView = new HomeView({ collection: NotesCollection });
         this.HomeView.render();
       },
 
       newRoute: function() {
-        this.NewNoteView = new NewNoteView();
         this.NewNoteView.render();
       },
 
