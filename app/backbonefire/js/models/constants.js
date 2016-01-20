@@ -4,7 +4,7 @@ define(
     'use strict';
 
     var Constants = {
-      FirebaseUrl: 'https://znotefire.firebaseio.com/'
+      FirebaseUrl: 'https://notefireapp.firebaseio.com/'
     };
 
     return Constants;
