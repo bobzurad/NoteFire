@@ -10,17 +10,21 @@ define(
 
       //this runs on page load
       initialize: function() {
-
+        this.listenTo(this.collection, 'add', this.noteAdded);
+        this.listenTo(this.collection, 'remove', this.noteDeleted);
+        this.listenTo(this.collection, 'sync', this.collectionSynced);
       },
 
       render: function() {
         this.$el.html(this.template());
-        this.listenTo(this.collection, 'sync', this.renderNotes);
+
         this.$noteViewsContainer = $("#noteViewsContainer");
 
         if (this.$noteViewsContainer.children().length === 0 && this.collection.length > 0) {
           this.renderNotes();
         }
+
+        window.scrollTo(0,0);
 
         return this;
       },
@@ -31,9 +35,27 @@ define(
         this.$noteViewsContainer.empty();
 
         this.collection.each(function(note) {
-          var view = new NoteView({ model: note });
-          self.$noteViewsContainer.append(view.render().el);
+          self.renderNote(note);
         });
+      },
+
+      renderNote: function(note) {
+        var view = new NoteView({ model: note });
+        this.$noteViewsContainer.prepend(view.render().el);
+      },
+
+      noteAdded: function(model, collection) {
+        this.renderNote(model);
+      },
+
+      noteDeleted: function(model, collection) {
+        this.$noteViewsContainer
+          .find('#' + model.attributes.id)
+          .remove();
+      },
+
+      collectionSynced: function() {
+        this.renderNotes();
       }
 
     });

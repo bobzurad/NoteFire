@@ -10,7 +10,10 @@ define(
       template: _.template(editNoteTemplate),
 
       events: {
-        "click #saveNote": 'saveNote'
+        "click #saveNote": 'saveNote',
+        "click #deleteNote": 'showDeleteWarning',
+        "click #noDelete": 'hideDeleteWarning',
+        "click #yesDelete": 'deleteNote'
       },
 
       //this runs on page load
@@ -42,6 +45,7 @@ define(
       modelLoaded: function(model) {
         this.$el.html(this.template({ model: this.model.attributes }));
         this.$el.find("#content").focus();
+        window.scrollTo(0,0);
       },
 
       saveNote: function(e) {
@@ -60,6 +64,11 @@ define(
         }
       },
 
+      deleteNote: function(e) {
+        this.model.destroy();
+        this.router.navigate("#/", { trigger: true });
+      },
+
       showErrors: function(model, errors) {
         _.each(errors, function(error) {
           this.$el.find("#" + error.attr).parent().addClass('has-danger');
@@ -68,8 +77,18 @@ define(
       },
 
       clearErrors: function() {
-        this.$(".has-danger").removeClass("has-danger");
-        this.$(".form-control-label").text("");
+        this.$el.find(".has-danger").removeClass("has-danger");
+        this.$el.find(".form-control-label").text("");
+      },
+
+      showDeleteWarning: function(e) {
+        this.$el.find('.buttonGroup').hide();
+        this.$el.find('.deleteWarning').show();
+      },
+
+      hideDeleteWarning: function(e) {
+        this.$el.find('.buttonGroup').show();
+        this.$el.find('.deleteWarning').hide();
       }
     });
 
