@@ -55,3 +55,7 @@ footer p {
     margin-top: 107px;
   }
 }
+
+.noteCard {
+  cursor: pointer;
+}

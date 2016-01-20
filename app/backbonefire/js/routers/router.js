@@ -1,6 +1,6 @@
 define(
-  ['jquery', 'backbone', 'collections/notes', 'views/home', 'views/newNote'],
-  function($, Backbone, NotesCollection, HomeView, NewNoteView) {
+  ['jquery', 'backbone', 'collections/notes', 'views/home', 'views/newNote', 'views/editNote'],
+  function($, Backbone, NotesCollection, HomeView, NewNoteView, EditNoteView) {
     'use strict';
 
     var Router = Backbone.Router.extend({
@@ -8,7 +8,7 @@ define(
       routes: {
         "home": "defaultRoute",
         "new": "newRoute",
-        "detail/:id": "detailRoute",
+        "edit/:id": "editRoute",
         "*path": "defaultRoute"
       },
 
@@ -16,6 +16,7 @@ define(
         //this function runs on every page load
         this.HomeView = new HomeView({ collection: NotesCollection });
         this.NewNoteView = new NewNoteView();
+        this.EditNoteView = new EditNoteView();
       },
 
       defaultRoute: function() {
@@ -26,8 +27,8 @@ define(
         this.NewNoteView.render();
       },
 
-      detailRoute: function(id) {
-
+      editRoute: function(id) {
+        this.EditNoteView.render(id);
       }
 
     });
