@@ -21,6 +21,8 @@ define(
         this.$noteViewsContainer = $("#noteViewsContainer");
 
         if (this.$noteViewsContainer.children().length === 0 && this.collection.length > 0) {
+          //notes are in collection, but removed from DOM. restore them.
+          //use case: user is returning to home page from edit or create page
           this.renderNotes();
         }
 

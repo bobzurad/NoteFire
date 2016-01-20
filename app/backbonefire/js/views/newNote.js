@@ -1,6 +1,6 @@
 define(
   ['jquery', 'underscore', 'backbone', 'collections/notes', 'models/note', 'text!templates/newNote.html'],
-  function($, _, Backbone, Notes, NoteModel, newNoteTemplate) {
+  function($, _, Backbone, NotesCollection, NoteModel, newNoteTemplate) {
     'use strict';
 
     var NewNoteView = Backbone.View.extend({
@@ -43,7 +43,7 @@ define(
         if (this.model.isValid()) {
           //if the collection contains a model with the same .attributes.id,
           //firebase will update the existing model in the colleciton, rather than add a new model
-          Notes.create(this.model.attributes);
+          NotesCollection.create(this.model.attributes);
 
           this.router.navigate("#/", { trigger: true });
         }

@@ -28,3 +28,10 @@ If you need to run this application at a different port you can change it in pac
 ```json
 "start": "http-server ./app -a localhost -p 8001",
 ```
+
+###Configuration
+You can configure this application to point to your own firebase by changing the FirebaseUrl in app/backbonefire/js/models/constants.js
+
+```javascript
+FirebaseUrl: 'https://<your-firebase-name>.firebaseio.com/',
+```

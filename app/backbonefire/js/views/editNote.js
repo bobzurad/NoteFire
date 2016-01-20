@@ -1,7 +1,7 @@
 define(
-  ['jquery', 'underscore', 'backbone', 'models/note', 'notefirecommon',
+  ['jquery', 'underscore', 'backbone', 'models/note', 'models/constants',
    'text!templates/editNote.html'],
-  function($, _, Backbone, NoteModel, Common, editNoteTemplate) {
+  function($, _, Backbone, NoteModel, Constants, editNoteTemplate) {
     'use strict';
 
     var EditNoteView = Backbone.View.extend({
@@ -25,7 +25,8 @@ define(
 
       render: function(id) {
         var NoteRef = Backbone.Firebase.Model.extend({
-          url: Common.FirebaseUrl + "notes/" + id,
+          validate: new NoteModel().validate, //copy the validation function from NoteModel
+          url: Constants.FirebaseUrl + "notes/" + id,
         });
 
         this.model = new NoteRef();

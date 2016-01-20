@@ -1,12 +1,12 @@
 define(
-  ['underscore', 'backbone', 'models/note', 'notefirecommon', 'firebase', 'backbonefire'],
-  function(_, Backbone, Note, Common) {
+  ['underscore', 'backbone', 'models/note', 'models/constants', 'firebase', 'backbonefire'],
+  function(_, Backbone, NoteModel, Constants) {
     'use strict';
 
     var NotesCollection = Backbone.Firebase.Collection.extend({
-      model: Note,
+      model: NoteModel,
 
-      url: Common.FirebaseUrl + 'notes'
+      url: Constants.FirebaseUrl + 'notes'
     });
 
     return new NotesCollection();
