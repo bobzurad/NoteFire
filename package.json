@@ -5,19 +5,20 @@
     "url": "https://twitter.com/bobzurad"
   },
   "description": "A simple notes app, written using various libraries from Firebase.",
-  "version": "0.0.1",
-  "homepage": "https://znotefire.firebaseapp.com/",
+  "version": "0.1.1",
+  "homepage": "https://www.notefireapp.com/",
   "repository": "https://github.com/bobzurad/NoteFire",
   "private": true,
   "license": "MIT",
   "devDependencies": {
-    "http-server": "^0.8.5",
-    "bootstrap": "4.0.0-alpha.2",
-    "jquery": "^2.2.0",
-    "tether": "^1.1.1",
+    "angular": "~1.4.8",
     "backbone": "^1.2.3",
+    "bootstrap": "4.0.0-alpha.2",
+    "http-server": "^0.8.5",
+    "jquery": "^2.2.0",
     "requirejs": "^2.1.22",
-    "requirejs-text": "2.0.12"
+    "requirejs-text": "^2.0.12",
+    "tether": "^1.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
