@@ -11,7 +11,8 @@
   "private": true,
   "license": "MIT",
   "devDependencies": {
-    "angular": "~1.4.8",
+    "angular": "~1.4.9",
+    "angular-route": "^1.4.9",
     "backbone": "^1.2.3",
     "bootstrap": "4.0.0-alpha.2",
     "http-server": "^0.8.5",

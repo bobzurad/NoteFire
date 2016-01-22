@@ -1,15 +1,24 @@
 (function() {
-  var app = angular.module('NoteFire', []);
+  'use strict';
 
-  app.controller('NoteCardController', function(){
-    var controller = this;
-
-    controller.notes = notes;
-  });
-
-  var notes = [
-    { id: 1, title: 'First Note!', content: 'hey! first note!' },
-    { id: 2, title: 'Second Note!', content: 'woohoo! a second note!' },
-    { id: 3, title: 'Another note', content: 'here is another note!' }
-  ];
+  angular
+    .module('NoteFire', ['ngRoute'])
+    .config(function($routeProvider) {
+    	$routeProvider
+      	.when('/new', {
+        	templateUrl: 'js/templates/add-note.html',
+          controller: 'AddNoteController',
+          controllerAs: 'addNoteCtrl'
+      	})
+        .when('/edit/:id', {
+          templateUrl: 'js/templates/edit-note.html',
+          controller: 'EditNoteController',
+          controllerAs: 'editNoteCtrl'
+        })
+        .otherwise({
+          templateUrl: 'js/templates/home.html',
+          controller: 'HomeController',
+          controllerAs: 'homeCtrl'
+        });
+    });
 })();
