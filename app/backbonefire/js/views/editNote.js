@@ -27,9 +27,11 @@ define(
         var NoteRef = Backbone.Firebase.Model.extend({
           validate: new NoteModel().validate, //copy the validation function from NoteModel
           url: Constants.FirebaseUrl + "notes/" + id,
+          autoSync: false //so we can delay syncing until we've verified model is valid
         });
 
         this.model = new NoteRef();
+        this.model.fetch();
 
         if (this.model.attributes.id === undefined) {
           //note isn't synced yet
