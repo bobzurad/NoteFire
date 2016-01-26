@@ -35,6 +35,7 @@ define(
         this.model.set({
           title: this.$el.find("#title").val(),
           content: this.$el.find("#content").val(),
+          dateCreated: Date.now()
         });
 
         this.clearErrors();
