@@ -34,16 +34,20 @@ define(
       renderNotes: function() {
         var self = this;
 
-        this.$noteViewsContainer.empty();
+        if(this.$noteViewsContainer) {
+          this.$noteViewsContainer.empty();
 
-        this.collection.each(function(note) {
-          self.renderNote(note);
-        });
+          this.collection.each(function(note) {
+            self.renderNote(note);
+          });
+        }
       },
 
       renderNote: function(note) {
-        var view = new NoteView({ model: note });
-        this.$noteViewsContainer.prepend(view.render().el);
+        if (this.$noteViewsContainer) {
+          var view = new NoteView({ model: note });
+          this.$noteViewsContainer.prepend(view.render().el);
+        }
       },
 
       noteAdded: function(model, collection) {
