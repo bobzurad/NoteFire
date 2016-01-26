@@ -1,21 +1,26 @@
 angular
   .module('NoteFire')
   .controller('AddNoteController', [
-    '$scope',
-    function($scope) {
+    '$location', 'NoteService',
+    function($location, NoteService) {
       'use strict';
 
       var controller = this;
+
       controller.note = {};
 
+      angular.element("#title").focus();
+      window.scrollTo(0,0);
+
       controller.addNote = function() {
-        //TODO: $scope.notes is undefined, wire this up to firebase
-        $scope.notes.push({
-          id: 4,
+        NoteService.addNote({
           title: controller.note.title,
-          content: controller.note.content
+          content: controller.note.content,
+          dateCreated: Date.now()
         });
         controller.note = {};
+
+        $location.url('/');
       };
     }
   ]);

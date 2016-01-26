@@ -2,7 +2,10 @@
   'use strict';
 
   angular
-    .module('NoteFire', ['ngRoute'])
+    .module('NoteFire', ['ngRoute', 'firebase'])
+    .constant('Constants',  {
+      FirebaseUrl: 'https://notefireapp.firebaseio.com/'
+    })
     .config(function($routeProvider) {
     	$routeProvider
       	.when('/new', {

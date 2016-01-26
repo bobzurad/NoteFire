@@ -30,7 +30,10 @@ If you need to run this application at a different port you can change it in pac
 ```
 
 ###Configuration
-You can configure this application to point to your own firebase by changing the FirebaseUrl in app/backbonefire/js/models/constants.js
+You can configure this application to point to your own firebase. Each app has it's own location for the Firebase url, which will need to be changed.
+
+* BackboneFire: app/backbonefire/js/models/constants.js
+* AngularFire: app/angularfire/js/app.js
 
 ```javascript
 FirebaseUrl: 'https://<your-firebase-name>.firebaseio.com/',

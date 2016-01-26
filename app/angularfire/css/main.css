@@ -60,6 +60,6 @@ footer p {
   cursor: pointer;
 }
 
-.ng-invalid.ng-dirty {
+form.ng-submitted .ng-invalid {
   border-color: red;
 }
