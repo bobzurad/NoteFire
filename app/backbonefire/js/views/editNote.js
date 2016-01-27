@@ -69,6 +69,7 @@ define(
 
       deleteNote: function(e) {
         this.model.destroy();
+        this.model.fetch();
         this.router.navigate("#/", { trigger: true });
       },
 
