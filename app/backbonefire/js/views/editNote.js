@@ -33,7 +33,7 @@ define(
         this.model = new NoteRef();
         this.model.fetch();
 
-        if (this.model.attributes.id === undefined) {
+        if (this.model.attributes.dateCreated === undefined) {
           //note isn't synced yet
           this.listenTo(this.model, 'sync', this.modelLoaded);
         } else {
