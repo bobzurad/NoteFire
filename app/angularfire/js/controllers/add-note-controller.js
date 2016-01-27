@@ -13,6 +13,11 @@ angular
       window.scrollTo(0,0);
 
       controller.addNote = function() {
+        if (controller.note.title.indexOf("<script") >= 0 ||
+            controller.note.content.indexOf("<script") >= 0) {
+          return;
+        }
+
         NoteService.addNote({
           title: controller.note.title,
           content: controller.note.content,

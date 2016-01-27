@@ -15,6 +15,14 @@ define(
           errors.push({ attr: "content", msg: "Content is required." });
         }
 
+        if (attrs.title.indexOf('<script') >= 0) {
+          errors.push({ attr: 'title', msg: 'Malicious data detected!'});
+        }
+
+        if (attrs.content.indexOf('<script') >= 0) {
+          errors.push({ attr: 'content', msg: 'Malicious data detected!'});
+        }
+
         if (errors.length > 0) {
           return errors;
         }

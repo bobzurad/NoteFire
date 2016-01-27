@@ -21,6 +21,11 @@ angular
       }
 
       controller.saveNote = function() {
+        if (controller.note.title.indexOf("<script") >= 0 ||
+            controller.note.content.indexOf("<script") >= 0) {
+          return;
+        }
+
         NoteService.updateNote(controller.note);
         controller.note = {};
         $location.url('/');
