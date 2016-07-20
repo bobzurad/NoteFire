@@ -4,7 +4,12 @@
   angular
     .module('NoteFire', ['ngRoute', 'firebase'])
     .constant('Constants',  {
-      FirebaseUrl: 'https://notefireapp.firebaseio.com/'
+      FirebaseConfig: {
+        apiKey: 'AIzaSyBgxr7HG-wEHoq1M_pcW7OIZMys8XGbRt4',
+        authDomain: 'notefireapp.firebaseapp.com',
+        databaseURL: 'https://notefireapp.firebaseio.com/',
+        storageBucket: 'notefireapp.appspot.com',
+      }
     })
     .config(function($routeProvider) {
     	$routeProvider
