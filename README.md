@@ -2,7 +2,7 @@
 
 NoteFire is a simple notes app I'm writing to prove to myself (and to anyone else that cares) that I can ship a product.
 
-To see NoteFire in action, visit [www.notefireapp.com](https://www.notefireapp.com)
+To see NoteFire in action, visit [notefireapp.com](https://www.notefireapp.com)
 
 For the Development Demo that spawned this, see [NoteFireDev](https://github.com/bobzurad/NoteFireDev)
 
