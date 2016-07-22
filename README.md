@@ -1,13 +1,15 @@
 #NoteFire
 
-NoteFire is a collection of simple note apps. Each app is functionally identical, but written using a different  [Firebase JavaScript Library](https://www.firebase.com/docs/web/libraries/). The goal of this project is to show how a simple notes app can be written using the libraries that Firebase offers. Each app points to the same Firebase, so each app contains identical data.
+NoteFire is a simple notes app I'm writing to prove to myself (and to anyone else that cares) that I can ship a product.
 
-So far this project contains two apps. One written using [BackboneFire](https://www.firebase.com/docs/web/libraries/backbone/quickstart.html) and another using [AngularFire](https://www.firebase.com/docs/web/libraries/angular/).
+To see NoteFire in action, visit [www.notefireapp.com](https://www.notefireapp.com)
+
+For the Development Demo that spawned this, see [NoteFireDev](https://github.com/bobzurad/NoteFireDev)
 
 ##Development
 Developing this project requires
 * [node.js](http://nodejs.org/)
-* A [firebase](http://www.firebase.com) account
+* A [firebase](http://firebase.google.com) account
   * Only needed if you want to write to your own firebase.
   * Install [firebase-tools](https://www.npmjs.com/package/firebase-tools) to deploy to your own firebase account
 
@@ -30,11 +32,13 @@ If you need to run this application at a different port you can change it in pac
 ```
 
 ###Configuration
-You can configure this application to point to your own firebase. Each app has it's own location for the Firebase url, which will need to be changed.
-
-* BackboneFire: app/backbonefire/js/models/constants.js
-* AngularFire: app/angularfire/js/app.js
+You can configure this application to point to your own firebase. You'll need to add your own config settings in app/js/app.js
 
 ```javascript
-FirebaseUrl: 'https://<your-firebase-name>.firebaseio.com/',
+FirebaseConfig: {
+  apiKey: ...,
+  authDomain: ...,
+  databaseURL: ...,
+  storageBucket: ...,
+}
 ```

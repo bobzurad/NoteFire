@@ -4,7 +4,7 @@
     "name": "Bob Zurad",
     "url": "https://twitter.com/bobzurad"
   },
-  "description": "A simple notes app, written using various libraries from Firebase.",
+  "description": "A simple notes app.",
   "version": "0.1.1",
   "homepage": "https://www.notefireapp.com/",
   "repository": "https://github.com/bobzurad/NoteFire",
@@ -14,7 +14,6 @@
     "angular": "~1.5.0",
     "angular-route": "~1.5.0",
     "angularfire": "^2.0.0",
-    "backbone": "^1.2.3",
     "bootstrap": "4.0.0-alpha.2",
     "firebase": "^3.0.0",
     "http-server": "^0.8.5",
