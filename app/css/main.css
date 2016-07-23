@@ -1,3 +1,7 @@
+body {
+  padding-top: 60px;  /* to fix navbar-fixed-top overlapping */
+}
+
 .navbar {
   margin-bottom: 0;
 }
@@ -44,10 +48,6 @@ footer {
 
 footer p {
   margin-bottom: .25rem;
-}
-
-#newNoteButton {
-  margin-right: 20px;
 }
 
 .noteCard {

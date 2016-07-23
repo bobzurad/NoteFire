@@ -17,10 +17,19 @@
   <body ng-app="NoteFire">
 
     <!-- Navbar -->
-    <div class="navbar navbar-static-top navbar-dark bg-inverse">
-      <div class="container-fluid">
-        <a href="#/" class="navbar-brand">NoteFire</a>
-        <a id="newNoteButton" type="button" class="btn btn-secondary btn-sm pull-xs-right" href="#/new">+ New Note</a>
+    <div class="navbar navbar-fixed-top navbar-dark bg-primary">
+      <div class="container">
+        <a href="#/" class="navbar-brand">
+          <i class="fa fa-home fa-lg" aria-hidden="true"></i>
+          &nbsp;&nbsp;NoteFire
+        </a>
+        <ul class="nav navbar-nav pull-xs-right">
+          <li class="nav-item">
+            <a href="#/new" class="nav-link">
+              <i class="fa fa-plus-square-o fa-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
 
