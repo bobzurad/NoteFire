@@ -18,14 +18,21 @@ angular
           return;
         }
 
+        angular.element("#saveButton").addClass("disabled");
+        angular.element("#saveButton").val("Saving...");
+
         NoteService.addNote({
           title: controller.note.title,
           content: controller.note.content,
           dateCreated: Date.now()
-        });
-        controller.note = {};
+        }).then(function(noteRef) {
+          angular.element("#saveButton").removeClass("disabled");
+          angular.element("#saveButton").val("Save Note");
 
-        $location.url('/');
+          controller.note = {};
+
+          $location.url('view/' + noteRef.key);
+        });
       };
     }
   ]);

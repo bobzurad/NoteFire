@@ -17,7 +17,7 @@ angular
       };
 
       NoteService.addNote = function(note) {
-        notes.$add(note);
+        return notes.$add(note);
       };
 
       NoteService.deleteNote = function(note) {
