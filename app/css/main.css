@@ -50,12 +50,6 @@ footer p {
   margin-right: 20px;
 }
 
-@media(min-width: 544px) {
-  #homeButton {
-    margin-top: 83px;
-  }
-}
-
 .noteCard {
   cursor: pointer;
 }

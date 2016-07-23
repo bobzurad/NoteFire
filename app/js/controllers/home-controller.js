@@ -10,7 +10,7 @@ angular
       controller.notes = NoteService.getNotes();
 
       controller.onCardClick = function(id) {
-        $location.url('edit/' + id);
+        $location.url('view/' + id);
       };
     }
   ]);

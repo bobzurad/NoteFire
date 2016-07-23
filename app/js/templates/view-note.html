@@ -1,0 +1,13 @@
+<div class="col-sm-11 col-xs-10">
+  <h3>{{ viewNoteCtrl.note.title }}</h3>
+</div>
+
+<div class="col-sm-1 col-xs-2">
+  <a ng-href="#/edit/{{ viewNoteCtrl.note.$id }}" title="Edit Note">
+    <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+  </a>
+</div>
+
+<div class="card col-xs-12">
+  {{ viewNoteCtrl.note.content }}
+</div>

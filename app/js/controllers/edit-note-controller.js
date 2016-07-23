@@ -25,10 +25,10 @@ angular
             controller.note.content.indexOf("<script") >= 0) {
           return;
         }
-
+        var id = controller.note.$id;
         NoteService.updateNote(controller.note);
         controller.note = {};
-        $location.url('/');
+        $location.path('/view/' + id);
       };
 
       controller.showDeleteWarning = function() {

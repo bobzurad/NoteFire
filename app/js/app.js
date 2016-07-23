@@ -18,6 +18,11 @@
           controller: 'AddNoteController',
           controllerAs: 'addNoteCtrl'
       	})
+        .when('/view/:id', {
+          templateUrl: 'js/templates/view-note.html',
+          controller: 'ViewNoteController',
+          controllerAs: 'viewNoteCtrl'
+        })
         .when('/edit/:id', {
           templateUrl: 'js/templates/edit-note.html',
           controller: 'EditNoteController',
