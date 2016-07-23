@@ -4,6 +4,8 @@ NoteFire is a simple notes app I'm writing to prove to myself (and to anyone els
 
 To see NoteFire in action, visit [notefireapp.com](https://www.notefireapp.com)
 
+To see what I have planned for NoteFire, see the [Product Backlog](https://github.com/bobzurad/NoteFire/wiki/Product-Backlog)
+
 For the Development Demo that spawned this, see [NoteFireDev](https://github.com/bobzurad/NoteFireDev)
 
 ##Development
