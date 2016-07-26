@@ -1,0 +1,66 @@
+<link href="css/login.css" rel="stylesheet">
+
+<div>
+  <div class="col-md-7">
+    <h1 class="display-2">NoteFire</h1>
+    <p class="lead">
+      Your notes, in the cloud. Create a free account to get started, or try our <a href="#/public">public notes</a>.
+    </p>
+  </div>
+  <div class="col-md-5">
+    <ul id="loginTabs" class="nav nav-tabs" data-tabs="tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#signinDiv" role="tab">Sign in</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#registerDiv" role="tab">Register</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="signinDiv">
+        <form class="form-signin" name="signinForm"
+          ng-submit="signinForm.$valid && loginCtrl.signin()" novalidate>
+
+          <label for="signinEmail" class="sr-only">Email address</label>
+          <input type="email" id="signinEmail" class="form-control"
+            ng-model="loginCtrl.email" placeholder="Email address" required autofocus>
+
+          <label for="signinPassword" class="sr-only">Password</label>
+          <input type="password" id="signinPassword" class="form-control"
+            ng-model="loginCtrl.password" placeholder="Password" required>
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-model="loginCtrl.rememberMe" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button id="signinButton" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+      </div>
+      <div class="tab-pane" id="registerDiv">
+        <form class="form-register" name="registerForm"
+          ng-submit="registerForm.$valid && loginCtrl.register()" novalidate>
+
+          <label for="registerEmail" class="sr-only">Email address</label>
+          <input type="email" id="registerEmail" class="form-control"
+            ng-model="loginCtrl.email" placeholder="Email address" required autofocus>
+
+          <label for="registerPassword" class="sr-only">Password</label>
+          <input type="password" id="registerPassword" class="form-control"
+            ng-model="loginCtrl.password" placeholder="Password" required>
+
+          <label for="registerConfirmPassword" class="sr-only">Confirm Password</label>
+          <input type="password" id="registerConfirmPassword" class="form-control"
+            ng-model="loginCtrl.confirmPassword" placeholder="Confirm Password" required>
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-model="loginCtrl.rememberMe" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button id="registerButton" class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

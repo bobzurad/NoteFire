@@ -20,9 +20,9 @@ body {
 }
 
 .album {
-  min-height: 50rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  min-height: 30rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
   background-color: #f7f7f7;
 }
 
@@ -56,4 +56,10 @@ footer p {
 
 form.ng-submitted .ng-invalid {
   border-color: red;
+}
+
+@media (max-width: 767px) {
+  .album {
+    padding-top: 1rem;
+  }
 }

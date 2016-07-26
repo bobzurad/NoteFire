@@ -1,13 +1,11 @@
 angular
   .module('NoteFire')
   .service('NoteService', [
-    '$firebaseArray', '$firebaseObject', 'Constants',
-    function($firebaseArray, $firebaseObject, Constants) {
+    '$firebaseArray', '$firebaseObject',
+    function($firebaseArray, $firebaseObject) {
       'use strict';
 
       var NoteService = this;
-
-      firebase.initializeApp(Constants.FirebaseConfig);
 
       var notesRef = firebase.database().ref('notes/');
       var notes = $firebaseArray(notesRef);

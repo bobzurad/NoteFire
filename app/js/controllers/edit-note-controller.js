@@ -1,8 +1,8 @@
 angular
   .module('NoteFire')
   .controller('EditNoteController', [
-    '$routeParams', '$location', 'NoteService',
-    function($routeParams, $location, NoteService) {
+    '$routeParams', '$location', 'NoteService', 'currentAuth',
+    function($routeParams, $location, NoteService, currentAuth) {
       'use strict';
 
       var controller = this;

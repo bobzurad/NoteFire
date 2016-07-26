@@ -1,8 +1,8 @@
 angular
   .module('NoteFire')
   .controller('HomeController', [
-    '$location', 'NoteService',
-    function($location, NoteService) {
+    '$location', 'NoteService', 'currentAuth',
+    function($location, NoteService, currentAuth) {
       'use strict';
 
       var controller = this;
