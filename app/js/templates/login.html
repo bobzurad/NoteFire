@@ -17,7 +17,7 @@
       </li>
     </ul>
     <div class="tab-content">
-      <div class="tab-pane active" id="signinDiv">
+      <div class="tab-pane active" id="signinDiv">        
         <form class="form-signin" name="signinForm"
           ng-submit="signinForm.$valid && loginCtrl.signin()" novalidate>
 
@@ -28,6 +28,10 @@
           <label for="signinPassword" class="sr-only">Password</label>
           <input type="password" id="signinPassword" class="form-control"
             ng-model="loginCtrl.password" placeholder="Password" required>
+
+          <div ng-if="loginCtrl.error" class="error">
+            {{ loginCtrl.error }}
+          </div>
 
           <div class="checkbox">
             <label>

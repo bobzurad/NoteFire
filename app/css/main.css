@@ -1,5 +1,5 @@
 body {
-  padding-top: 60px;  /* to fix navbar-fixed-top overlapping */
+  padding-top: 55px;  /* to fix navbar-fixed-top overlapping */
 }
 
 .navbar {
@@ -62,4 +62,8 @@ form.ng-submitted .ng-invalid {
   .album {
     padding-top: 1rem;
   }
+}
+
+.error {
+  color: red;
 }
