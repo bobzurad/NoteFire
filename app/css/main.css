@@ -2,6 +2,10 @@ body {
   padding-top: 55px;  /* to fix navbar-fixed-top overlapping */
 }
 
+a[href="#/new"] {
+  padding-left: 20px;
+}
+
 .navbar {
   margin-bottom: 0;
 }

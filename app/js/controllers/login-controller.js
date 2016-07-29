@@ -8,7 +8,7 @@ angular
       var controller = this;
 
       //if user is already authenticated, redirect them home
-      if (Auth.$getAuth().uid) {
+      if (Auth.$getAuth()) {
         $location.url('home');
       }
       //hack to make bootstrap tabs work with Angular

@@ -25,6 +25,18 @@
             }]
           }
         })
+        .when('/logout', {
+          templateUrl: 'js/templates/logout.html',
+          controller: 'LogoutController',
+          controllerAs: 'logoutCtrl',
+          resolve: {
+            // controller will not be loaded until $waitForSignIn resolves
+            currentAuth: ["Auth", function(Auth) {
+              // $waitForSignIn returns a promise so the resolve waits for it to complete
+              return Auth.$requireSignIn();
+            }]
+          }
+        })
       	.when('/new', {
         	templateUrl: 'js/templates/add-note.html',
           controller: 'AddNoteController',
