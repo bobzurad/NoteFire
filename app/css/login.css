@@ -51,3 +51,7 @@
     display: none;
   }
 }
+
+p.forgotPasswordText {
+  padding-left: 10px;
+}

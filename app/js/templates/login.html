@@ -17,7 +17,7 @@
       </li>
     </ul>
     <div class="tab-content">
-      <div class="tab-pane active" id="signinDiv">        
+      <div class="tab-pane active" id="signinDiv">
         <form class="form-signin" name="signinForm"
           ng-submit="signinForm.$valid && loginCtrl.signin()" novalidate>
 
@@ -33,11 +33,9 @@
             {{ loginCtrl.error }}
           </div>
 
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" ng-model="loginCtrl.rememberMe" value="remember-me"> Remember me
-            </label>
-          </div>
+          <p class="forgotPasswordText">
+            <small><a href="#/forgotPassword">I forgot my password</a></small>
+          </p>
           <button id="signinButton" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
       </div>
@@ -57,11 +55,6 @@
           <input type="password" id="registerConfirmPassword" class="form-control"
             ng-model="loginCtrl.confirmPassword" placeholder="Confirm Password" required>
 
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" ng-model="loginCtrl.rememberMe" value="remember-me"> Remember me
-            </label>
-          </div>
           <button id="registerButton" class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
         </form>
       </div>
