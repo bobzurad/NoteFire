@@ -27,13 +27,15 @@
               <i class="fa fa-fire fa-lg" aria-hidden="true"></i>
             </a>
           </li>
-          <li ng-show="navCtrl.isAuthenticated" class="nav-item">
-            <a href="#/new" class="navbar-brand" title="New Note">
+          <li class="nav-item">
+            <a href="#/new" class="navbar-brand isAuthenticated" title="New Note"
+              style="display: none;">
               <i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i>
             </a>
           </li>
-          <li ng-show="navCtrl.isAuthenticated" class="nav-item pull-xs-right">
-            <a href="#/logout" class="nav-link" title="Logout">
+          <li class="nav-item pull-xs-right">
+            <a href="#/logout" class="nav-link isAuthenticated" title="Logout"
+              style="display: none;">
               <i class="fa fa-sign-out" aria-hidden="true"></i>
             </a>
           </li>

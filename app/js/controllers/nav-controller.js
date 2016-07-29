@@ -8,7 +8,12 @@ angular
       var controller = this;
 
       Auth.$onAuthStateChanged(function(user) {
-        controller.isAuthenticated = user !== null;
+        //show or hide links in navbar
+        if (user) {
+          angular.element(".isAuthenticated").show();
+        } else {
+          angular.element(".isAuthenticated").hide();
+        }
       });
     }
   ]);
