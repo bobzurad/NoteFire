@@ -70,6 +70,11 @@
             }]
           }
         })
+        .when('/public', {
+          templateUrl: 'js/templates/public.html',
+          controller: 'PublicController',
+          controllerAs: 'publicCtrl'
+        })
         .otherwise({
           templateUrl: 'js/templates/home.html',
           controller: 'HomeController',

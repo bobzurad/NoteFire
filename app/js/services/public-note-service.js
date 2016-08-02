@@ -1,14 +1,13 @@
 angular
   .module('NoteFire')
-  .service('NoteService', [
-    '$firebaseArray', '$firebaseObject', 'Auth',
-    function($firebaseArray, $firebaseObject, Auth) {
+  .service('PublicNoteService', [
+    '$firebaseArray', '$firebaseObject',
+    function($firebaseArray, $firebaseObject) {
       'use strict';
 
       //init
       var NoteService = this,
-        user = Auth.$getAuth(),
-        notesRef = firebase.database().ref('notes/' + user.uid),
+        notesRef = firebase.database().ref('notes/public'),
         notes = $firebaseArray(notesRef);
 
       //public functions
