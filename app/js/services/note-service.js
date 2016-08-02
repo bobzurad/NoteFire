@@ -9,7 +9,7 @@ angular
 
       firebase.initializeApp(Constants.FirebaseConfig);
 
-      var notesRef = firebase.database().ref('notes/');
+      var notesRef = firebase.database().ref('notes/public');
       var notes = $firebaseArray(notesRef);
 
       NoteService.getNotes = function() {
