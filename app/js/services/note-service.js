@@ -7,7 +7,7 @@ angular
 
       var NoteService = this;
 
-      var notesRef = firebase.database().ref('notes/');
+      var notesRef = firebase.database().ref('notes/public');
       var notes = $firebaseArray(notesRef);
 
       NoteService.getNotes = function() {
