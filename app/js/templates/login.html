@@ -23,14 +23,14 @@
 
           <label for="signinEmail" class="sr-only">Email address</label>
           <input type="email" id="signinEmail" class="form-control"
-            ng-model="loginCtrl.email" placeholder="Email address" required autofocus>
+            ng-model="loginCtrl.email" placeholder="Email address" required email autofocus>
 
           <label for="signinPassword" class="sr-only">Password</label>
           <input type="password" id="signinPassword" class="form-control"
             ng-model="loginCtrl.password" placeholder="Password" required>
 
-          <div ng-if="loginCtrl.error" class="error">
-            {{ loginCtrl.error }}
+          <div ng-if="loginCtrl.signinError" class="error">
+            {{ loginCtrl.signinError }}
           </div>
 
           <p class="forgotPasswordText">
@@ -45,7 +45,7 @@
 
           <label for="registerEmail" class="sr-only">Email address</label>
           <input type="email" id="registerEmail" class="form-control"
-            ng-model="loginCtrl.email" placeholder="Email address" required autofocus>
+            ng-model="loginCtrl.email" placeholder="Email address" required email autofocus>
 
           <label for="registerPassword" class="sr-only">Password</label>
           <input type="password" id="registerPassword" class="form-control"
@@ -55,7 +55,17 @@
           <input type="password" id="registerConfirmPassword" class="form-control"
             ng-model="loginCtrl.confirmPassword" placeholder="Confirm Password" required>
 
-          <button id="registerButton" class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+          <div ng-if="loginCtrl.registerError" class="error">
+            {{ loginCtrl.registerError }}
+          </div>
+
+          <button id="registerButton" class="btn btn-lg btn-primary btn-block" type="submit">
+            <span id="registerButtonText">Register</span>
+            <span id="registerButtonIcon" style="display: none;">
+              <i class="fa fa-spinner fa-pulse fa-lg"></i>
+              <span class="sr-only">Loading...</span>
+            </span>
+          </button>
         </form>
       </div>
     </div>

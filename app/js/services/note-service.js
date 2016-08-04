@@ -7,11 +7,23 @@ angular
 
       //init
       var NoteService = this,
-        user = Auth.$getAuth(),
-        notesRef = firebase.database().ref('notes/' + user.uid),
-        notes = $firebaseArray(notesRef);
+        notes;
 
       //public functions
+      NoteService.init = function(refPath) {
+        if (!refPath) {
+          var user = Auth.$getAuth();
+
+          if (user) {
+            refPath = firebase.database().ref('notes/' + user.uid);
+          } else {
+            refPath = 'notes/public';
+          }
+        }
+
+        notes = $firebaseArray(refPath);
+      };
+
       NoteService.getNotes = function() {
         return notes;
       };
