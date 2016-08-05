@@ -49,13 +49,19 @@ angular
           .then(function(user) {
             //after creating the user, create their first note
             var ref = firebase.database().ref('notes/' + user.uid);
-            var firstNote = $firebaseObject(ref);
-
-            firstNote.title = 'Your First Note!';
-            firstNote.content = 'Welcome to NoteFire!';
-            firstNote.dateCreated = Date.now();
-
-            firstNote.$save()
+            var userRoot = $firebaseObject(ref);
+/*
+            userRoot[user.uid] = {
+              title: 'Your First Note!',
+              content: 'Welcome to NoteFire!',
+              dateCreated: Date.now()
+            };
+*/
+            userRoot.title = "teset title";
+            userRoot.content = "text content";
+            userRoot.dateCreated = Date.now();
+            
+            userRoot.$save()
               .then(function() {
                 //everything is awesome. cleanup and redirect to home
                 hideSpinner();
