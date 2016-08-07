@@ -1,8 +1,8 @@
 angular
   .module('NoteFire')
   .controller('LoginController', [
-    '$location', 'Auth', '$firebaseObject',
-    function($location, Auth, $firebaseObject) {
+    '$location', 'Auth', 'NoteService',
+    function($location, Auth, NoteService) {
       'use strict';
 
       var controller = this;
@@ -49,29 +49,22 @@ angular
           .then(function(user) {
             //after creating the user, create their first note
             var ref = firebase.database().ref('notes/' + user.uid);
-            var userRoot = $firebaseObject(ref);
-/*
-            userRoot[user.uid] = {
+            NoteService.init(ref);
+            NoteService.addNote({
               title: 'Your First Note!',
-              content: 'Welcome to NoteFire!',
+              content: 'Welcome to FireNote!',
               dateCreated: Date.now()
-            };
-*/
-            userRoot.title = "teset title";
-            userRoot.content = "text content";
-            userRoot.dateCreated = Date.now();
-            
-            userRoot.$save()
-              .then(function() {
-                //everything is awesome. cleanup and redirect to home
-                hideSpinner();
-                $location.path("home");
-              })
-              .catch(function(error) {
-                //error creating note
-                hideSpinner();
-                controller.registerError = error.message;
-              });
+            })
+            .then(function() {
+              //everything is awesome. cleanup and redirect to home
+              hideSpinner();
+              $location.path("home");
+            })
+            .catch(function(error) {
+              //error creating note
+              hideSpinner();
+              controller.registerError = error.message;
+            });
           })
           .catch(function(error) {
             //error creating user

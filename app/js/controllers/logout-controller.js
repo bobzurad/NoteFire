@@ -1,8 +1,8 @@
 angular
   .module('NoteFire')
   .controller('LogoutController', [
-    '$location', 'Auth', 'currentAuth',
-    function($location, Auth, currentAuth) {
+    '$location', 'Auth', 'currentAuth', 'NoteService',
+    function($location, Auth, currentAuth, NoteService) {
       'use strict';
 
       var controller = this;
@@ -14,6 +14,7 @@ angular
       });
 
       controller.logout = function() {
+        NoteService.close();
         Auth.$signOut();
       };
 

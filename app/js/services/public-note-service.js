@@ -1,8 +1,8 @@
 angular
   .module('NoteFire')
   .service('PublicNoteService', [
-    '$firebaseArray', '$firebaseObject',
-    function($firebaseArray, $firebaseObject) {
+    '$firebaseArray',
+    function($firebaseArray) {
       'use strict';
 
       //init

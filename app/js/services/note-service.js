@@ -24,6 +24,10 @@ angular
         notes = $firebaseArray(refPath);
       };
 
+      NoteService.close = function() {
+        notes.$destroy();
+      };
+
       NoteService.getNotes = function() {
         return notes;
       };
@@ -37,7 +41,13 @@ angular
       };
 
       NoteService.getNoteById = function(id) {
-        return notes.$getRecord(id);
+        if (notes) {
+          return notes.$getRecord(id);
+        } else {
+          var user = Auth.$getAuth();
+          var ref = firebase.database().ref('notes/' + user.uid + '/' + id);
+          return $firebaseObject(ref);
+        }
       };
 
       NoteService.updateNote = function(note) {

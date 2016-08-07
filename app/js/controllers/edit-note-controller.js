@@ -13,13 +13,6 @@ angular
       angular.element("#content").focus();
       window.scrollTo(0,0);
 
-      if (controller.note === null) {
-        //note either doesn't exist the array isn't loaded yet.
-        NoteService.getNotes().$loaded().then(function(data) {
-          controller.note = data.$getRecord($routeParams.id);
-        });
-      }
-
       controller.saveNote = function() {
         if (controller.note.title.indexOf("<script") >= 0 ||
             controller.note.content.indexOf("<script") >= 0) {
