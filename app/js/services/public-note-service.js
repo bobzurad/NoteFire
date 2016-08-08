@@ -23,7 +23,13 @@ angular
       };
 
       PublicNoteService.deleteNote = function(note) {
-        notes.$remove(note);
+        if (notes) {
+          notes.$remove(note);
+        } else if (note.$remove) {
+          note.$remove();
+        } else {
+          throw new Error("error deleting note");
+        }
       };
 
       PublicNoteService.getNoteById = function(id) {
@@ -36,7 +42,13 @@ angular
       };
 
       PublicNoteService.updateNote = function(note) {
-        notes.$save(note);
+        if (notes) {
+          notes.$save(note);
+        } else if (note.$save) {
+          note.$save();
+        } else {
+          throw new Exception("error saving note");
+        }
       };
     }
   ]);

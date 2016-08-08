@@ -48,7 +48,7 @@ angular
           PublicNoteService.deleteNote(controller.note);
         }
         controller.note = {};
-        $location.url('/');
+        $location.url('home');
       };
     }
   ]);

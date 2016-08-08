@@ -13,10 +13,10 @@
     })
     .config(["$routeProvider", function($routeProvider) {
     	$routeProvider
-        .when('/login', {
-          templateUrl: 'js/templates/login.html',
-          controller: 'LoginController',
-          controllerAs: 'loginCtrl',
+        .when('/home', {
+          templateUrl: 'js/templates/home.html',
+          controller: 'HomeController',
+          controllerAs: 'homeCtrl',
           resolve: {
             // controller will not be loaded until $waitForSignIn resolves
             currentAuth: ["Auth", function(Auth) {
@@ -76,9 +76,9 @@
           controllerAs: 'publicCtrl'
         })
         .otherwise({
-          templateUrl: 'js/templates/home.html',
-          controller: 'HomeController',
-          controllerAs: 'homeCtrl',
+          templateUrl: 'js/templates/login.html',
+          controller: 'LoginController',
+          controllerAs: 'loginCtrl',
           resolve: {
             currentAuth: ["Auth", function(Auth) {
               return Auth.$waitForSignIn();

@@ -37,7 +37,13 @@ angular
       };
 
       NoteService.deleteNote = function(note) {
-        notes.$remove(note);
+        if (notes) {
+          notes.$remove(note);
+        } else if (note.$remove) {
+          note.$remove();
+        } else {
+          throw new Error("error deleting note");
+        }
       };
 
       NoteService.getNoteById = function(id) {
@@ -51,7 +57,13 @@ angular
       };
 
       NoteService.updateNote = function(note) {
-        notes.$save(note);
+        if (notes) {
+          notes.$save(note);
+        } else if (note.$save) {
+          note.$save();
+        } else {
+          throw new Error("error saving note");
+        }
       };
     }
   ]);

@@ -11,6 +11,9 @@ angular
       if (Auth.$getAuth()) {
         $location.url('home');
       }
+
+      angular.element("#signinEmail").focus();
+
       //hack to make bootstrap tabs work with Angular
       angular.element('#loginTabs a').click(function (e) {
         e.preventDefault();
