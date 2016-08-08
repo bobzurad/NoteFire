@@ -56,7 +56,7 @@
           controllerAs: 'viewNoteCtrl',
           resolve: {
             currentAuth: ["Auth", function(Auth) {
-              return Auth.$requireSignIn();
+              return Auth.$waitForSignIn();
             }]
           }
         })
@@ -66,7 +66,7 @@
           controllerAs: 'editNoteCtrl',
           resolve: {
             currentAuth: ["Auth", function(Auth) {
-              return Auth.$requireSignIn();
+              return Auth.$waitForSignIn();
             }]
           }
         })
@@ -81,7 +81,7 @@
           controllerAs: 'homeCtrl',
           resolve: {
             currentAuth: ["Auth", function(Auth) {
-              return Auth.$requireSignIn();
+              return Auth.$waitForSignIn();
             }]
           }
         });

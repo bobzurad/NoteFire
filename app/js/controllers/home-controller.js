@@ -5,6 +5,11 @@ angular
     function($location, NoteService, currentAuth) {
       'use strict';
 
+      if (!currentAuth) {
+        $location.url("public");
+        return;
+      }
+
       var controller = this;
 
       NoteService.init();

@@ -1,14 +1,19 @@
 angular
   .module('NoteFire')
   .controller('EditNoteController', [
-    '$routeParams', '$location', 'NoteService', 'currentAuth',
-    function($routeParams, $location, NoteService, currentAuth) {
+    '$routeParams', '$location', 'NoteService', 'PublicNoteService', 'currentAuth',
+    function($routeParams, $location, NoteService, PublicNoteService, currentAuth) {
       'use strict';
 
       var controller = this;
 
       controller.showWarning = false;
-      controller.note = NoteService.getNoteById($routeParams.id);
+
+      if (currentAuth) {
+        controller.note = NoteService.getNoteById($routeParams.id);
+      } else {
+        controller.note = PublicNoteService.getNoteById($routeParams.id);
+      }
 
       angular.element("#content").focus();
       window.scrollTo(0,0);
@@ -19,7 +24,11 @@ angular
           return;
         }
         var id = controller.note.$id;
-        NoteService.updateNote(controller.note);
+        if (currentAuth) {
+          NoteService.updateNote(controller.note);
+        } else {
+          PublicNoteService.updateNote(controller.note);
+        }
         controller.note = {};
         $location.path('/view/' + id);
       };
@@ -33,7 +42,11 @@ angular
       };
 
       controller.deleteNote = function() {
-        NoteService.deleteNote(controller.note);
+        if (currentAuth) {
+          NoteService.deleteNote(controller.note);
+        } else {
+          PublicNoteService.deleteNote(controller.note);
+        }
         controller.note = {};
         $location.url('/');
       };

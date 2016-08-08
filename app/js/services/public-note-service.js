@@ -1,33 +1,41 @@
 angular
   .module('NoteFire')
   .service('PublicNoteService', [
-    '$firebaseArray',
-    function($firebaseArray) {
+    '$firebaseArray', '$firebaseObject',
+    function($firebaseArray, $firebaseObject) {
       'use strict';
 
       //init
-      var NoteService = this,
-        notesRef = firebase.database().ref('notes/public'),
-        notes = $firebaseArray(notesRef);
+      var PublicNoteService = this,
+        notes;
 
       //public functions
-      NoteService.getNotes = function() {
+      PublicNoteService.init = function() {
+        notes = $firebaseArray(firebase.database().ref('notes/public'));
+      };
+
+      PublicNoteService.getNotes = function() {
         return notes;
       };
 
-      NoteService.addNote = function(note) {
+      PublicNoteService.addNote = function(note) {
         return notes.$add(note);
       };
 
-      NoteService.deleteNote = function(note) {
+      PublicNoteService.deleteNote = function(note) {
         notes.$remove(note);
       };
 
-      NoteService.getNoteById = function(id) {
-        return notes.$getRecord(id);
+      PublicNoteService.getNoteById = function(id) {
+        if (notes) {
+          return notes.$getRecord(id);
+        } else {
+          var ref = firebase.database().ref('notes/public/' + id);
+          return $firebaseObject(ref);
+        }
       };
 
-      NoteService.updateNote = function(note) {
+      PublicNoteService.updateNote = function(note) {
         notes.$save(note);
       };
     }

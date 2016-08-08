@@ -9,7 +9,7 @@ angular
 
       Auth.$onAuthStateChanged(function(user) {
         if (!user) {
-          $location.url("login");
+          $location.url("login");          
         }
       });
 

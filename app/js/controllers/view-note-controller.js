@@ -1,14 +1,18 @@
 angular
   .module('NoteFire')
   .controller('ViewNoteController', [
-    '$routeParams', 'NoteService', 'currentAuth',
-    function($routeParams, NoteService, currentAuth) {
+    '$routeParams', 'NoteService', 'PublicNoteService', 'currentAuth',
+    function($routeParams, NoteService, PublicNoteService, currentAuth) {
       'use strict';
 
       var controller = this;
 
-      controller.note = NoteService.getNoteById($routeParams.id);
+      if (currentAuth) {
+        controller.note = NoteService.getNoteById($routeParams.id);
+      } else {
+        controller.note = PublicNoteService.getNoteById($routeParams.id);
+      }
 
-      window.scrollTo(0, 0);      
+      window.scrollTo(0, 0);
     }
   ]);

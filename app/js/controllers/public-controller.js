@@ -7,6 +7,7 @@ angular
 
       var controller = this;
 
+      PublicNoteService.init();
       controller.notes = PublicNoteService.getNotes();
 
       controller.onCardClick = function(id) {
