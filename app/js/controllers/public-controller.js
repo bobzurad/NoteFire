@@ -7,6 +7,8 @@ angular
 
       var controller = this;
 
+      angular.element("#newNoteLink").show();
+
       PublicNoteService.init();
       controller.notes = PublicNoteService.getNotes();
 

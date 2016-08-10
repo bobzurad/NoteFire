@@ -13,6 +13,7 @@ angular
         controller.note = PublicNoteService.getNoteById($routeParams.id);
       }
 
+      angular.element("#newNoteLink").show();
       window.scrollTo(0, 0);
     }
   ]);

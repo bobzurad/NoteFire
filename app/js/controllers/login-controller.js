@@ -13,6 +13,7 @@ angular
       }
 
       angular.element("#signinEmail").focus();
+      angular.element("#newNoteLink").hide();
 
       //hack to make bootstrap tabs work with Angular
       angular.element('#loginTabs a').click(function (e) {

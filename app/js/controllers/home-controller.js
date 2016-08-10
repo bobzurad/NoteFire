@@ -12,6 +12,8 @@ angular
 
       var controller = this;
 
+      angular.element("#newNoteLink").show();
+
       NoteService.init();
       controller.notes = NoteService.getNotes();
 

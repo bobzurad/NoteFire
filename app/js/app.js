@@ -46,7 +46,7 @@
             currentAuth: ["Auth", function(Auth) {
               // $requireSignIn returns a promise so the resolve waits for it to complete
               // If the promise is rejected, it will throw a $routeChangeError
-              return Auth.$requireSignIn();
+              return Auth.$waitForSignIn();
             }]
           }
       	})

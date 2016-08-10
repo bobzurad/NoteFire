@@ -16,6 +16,7 @@ angular
       }
 
       angular.element("#content").focus();
+      angular.element("#newNoteLink").show();
       window.scrollTo(0,0);
 
       controller.saveNote = function() {
