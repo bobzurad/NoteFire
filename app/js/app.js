@@ -75,6 +75,11 @@
           controller: 'PublicController',
           controllerAs: 'publicCtrl'
         })
+        .when('/forgotPassword', {
+          templateUrl: 'js/templates/forgot-password.html',
+          controller: 'ForgotPasswordController',
+          controllerAs: 'forgotPasswordCtrl'
+        })
         .otherwise({
           templateUrl: 'js/templates/login.html',
           controller: 'LoginController',
