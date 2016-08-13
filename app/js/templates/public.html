@@ -1,3 +1,8 @@
+<div class="alert alert-warning public-warning" role="alert">
+  These notes are open to the public. To create your own private notes, please
+  <a href="#/login?register">register</a>.
+</div>
+
 <div ng-repeat="note in publicCtrl.notes | orderBy:'-dateCreated'">
   <div id="{{ note.$id }}" class="card col-md-4" ng-click="publicCtrl.onCardClick(note.$id)">
     <div class="noteCard">

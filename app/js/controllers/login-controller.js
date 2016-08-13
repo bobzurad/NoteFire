@@ -12,7 +12,10 @@ angular
         $location.url('home');
       }
 
-      angular.element("#signinEmail").focus();
+      if ($location.search().register) {
+        $("#loginTabs a:last").tab('show');
+      }
+      
       angular.element("#newNoteLink").hide();
 
       //hack to make bootstrap tabs work with Angular
