@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('NoteFire', ['ngRoute', 'firebase'])
+    .module('NoteFire', ['ngRoute', 'firebase', 'ui.tinymce'])
     .constant('Constants',  {
       FirebaseConfig: {
         apiKey: 'AIzaSyBgxr7HG-wEHoq1M_pcW7OIZMys8XGbRt4',
