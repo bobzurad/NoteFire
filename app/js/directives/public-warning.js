@@ -5,16 +5,19 @@ angular
       restrict: 'E',
       templateUrl: 'js/directives/public-warning.html',
       controllerAs: 'publicWarningCtrl',
-      controller: ['Auth', function(Auth) {
-        'use strict';
+      controller: [
+        'Auth',
+        function(Auth) {
+          'use strict';
 
-        var controller = this;
+          var controller = this;
 
-        controller.isVisible = false;
+          controller.isVisible = false;
 
-        Auth.$onAuthStateChanged(function(user) {
-          controller.isVisible = !user;
-        });
-      }]
+          Auth.$onAuthStateChanged(function(user) {
+            controller.isVisible = !user;
+          });
+        }
+      ]
     };
   });
