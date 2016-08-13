@@ -24,14 +24,20 @@ angular
             controller.note.content.indexOf("<script") >= 0) {
           return;
         }
-        var id = controller.note.$id;
+
+        angular.element("#saveButton").addClass("disabled");
+        angular.element("#saveButtonText").hide();
+        angular.element("#saveButtonIcon").show();
+
         if (currentAuth) {
-          NoteService.updateNote(controller.note);
+          NoteService
+            .updateNote(controller.note)
+            .then(updateNoteCallback);
         } else {
-          PublicNoteService.updateNote(controller.note);
+          PublicNoteService
+            .updateNote(controller.note)
+            .then(updateNoteCallback);
         }
-        controller.note = {};
-        $location.path('/view/' + id);
       };
 
       controller.showDeleteWarning = function() {
@@ -43,13 +49,35 @@ angular
       };
 
       controller.deleteNote = function() {
+        angular.element("#deleteButtonText").hide();
+        angular.element("#deleteButtonIcon").show();
+
         if (currentAuth) {
-          NoteService.deleteNote(controller.note);
+          NoteService
+            .deleteNote(controller.note)
+            .then(deleteNoteCallback);
         } else {
-          PublicNoteService.deleteNote(controller.note);
+          PublicNoteService
+            .deleteNote(controller.note)
+            .then(deleteNoteCallback);
         }
+      };
+
+      function updateNoteCallback(noteRef) {
+        angular.element("#saveButton").removeClass("disabled");
+        angular.element("#saveButtonIcon").hide();
+        angular.element("#saveButtonText").show();
+
+        controller.note = {};
+        $location.path('/view/' + noteRef.key);
+      }
+
+      function deleteNoteCallback() {
+        angular.element("#deleteButtonIcon").hide();
+        angular.element("#deleteButtonText").show();
+        
         controller.note = {};
         $location.url('home');
-      };
+      }
     }
   ]);

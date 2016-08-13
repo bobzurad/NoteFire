@@ -36,7 +36,13 @@
           <p class="forgotPasswordText">
             <small><a href="#/forgotPassword">I forgot my password</a></small>
           </p>
-          <button id="signinButton" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <button id="signinButton" class="btn btn-lg btn-primary btn-block" type="submit">
+            <span id="signinButtonText">Sign in</span>
+            <span id="signinButtonIcon" style="display: none;">
+              <i class="fa fa-spinner fa-pulse fa-lg"></i>
+              <span class="sr-only">Loading...</span>
+            </span>
+          </button>
         </form>
       </div>
       <div class="tab-pane" id="registerDiv">

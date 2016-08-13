@@ -38,9 +38,9 @@ angular
 
       NoteService.deleteNote = function(note) {
         if (notes) {
-          notes.$remove(note);
+          return notes.$remove(note);
         } else if (note.$remove) {
-          note.$remove();
+          return note.$remove();
         } else {
           throw new Error("error deleting note");
         }
@@ -58,9 +58,9 @@ angular
 
       NoteService.updateNote = function(note) {
         if (notes) {
-          notes.$save(note);
+          return notes.$save(note);
         } else if (note.$save) {
-          note.$save();
+          return note.$save();
         } else {
           throw new Error("error saving note");
         }

@@ -20,7 +20,8 @@ angular
         }
 
         angular.element("#saveButton").addClass("disabled");
-        angular.element("#saveButton").val("Saving...");
+        angular.element("#saveButtonText").hide();
+        angular.element("#saveButtonIcon").show();
 
         var note = {
           title: controller.note.title,
@@ -41,7 +42,8 @@ angular
 
       function addNoteCallback(noteRef) {
         angular.element("#saveButton").removeClass("disabled");
-        angular.element("#saveButton").val("Save Note");
+        angular.element("#saveButtonIcon").hide();
+        angular.element("#saveButtonText").show();
 
         controller.note = {};
 
