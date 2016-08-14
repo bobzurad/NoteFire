@@ -15,7 +15,6 @@ angular
         controller.note = PublicNoteService.getNoteById($routeParams.id);
       }
 
-      angular.element("#content").focus();
       angular.element("#newNoteLink").show();
       window.scrollTo(0,0);
 
@@ -75,7 +74,7 @@ angular
       function deleteNoteCallback() {
         angular.element("#deleteButtonIcon").hide();
         angular.element("#deleteButtonText").show();
-        
+
         controller.note = {};
         $location.url('home');
       }
