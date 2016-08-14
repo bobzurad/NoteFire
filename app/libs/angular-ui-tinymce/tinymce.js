@@ -139,7 +139,9 @@ angular.module('ui.tinymce', [])
             tinymce.baseURL = options.baseURL;
           }
           tinymce.init(options);
-          toggleDisable(scope.$eval(attrs.ngDisabled));
+          //bob zurad: commenting out the following line to fix the issue described here:
+          //https://github.com/angular-ui/ui-tinymce/issues/264
+          //toggleDisable(scope.$eval(attrs.ngDisabled));
         });
 
         ngModel.$formatters.unshift(function(modelValue) {
