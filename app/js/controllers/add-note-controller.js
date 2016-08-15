@@ -13,7 +13,6 @@ angular
         statusbar: false
       };
 
-      angular.element("#title").focus();
       angular.element("#newNoteLink").show();
       window.scrollTo(0,0);
 
