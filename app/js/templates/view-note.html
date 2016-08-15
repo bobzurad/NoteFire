@@ -12,6 +12,5 @@
   </a>
 </div>
 
-<div class="card col-xs-12">
-  {{ viewNoteCtrl.note.content }}
+<div class="card col-xs-12" ng-bind-html="viewNoteCtrl.trustedHtml">
 </div>

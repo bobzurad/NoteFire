@@ -13,6 +13,7 @@
   "devDependencies": {
     "angular": "~1.5.0",
     "angular-route": "~1.5.0",
+    "angular-sanitize": "^1.5.8",
     "angular-ui-tinymce": "0.0.16",
     "angularfire": "^2.0.0",
     "bootstrap": "4.0.0-alpha.2",
