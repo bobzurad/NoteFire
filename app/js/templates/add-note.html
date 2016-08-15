@@ -10,7 +10,9 @@
 
   <fieldset class="form-group">
     <span class="form-control-label"></span>
-    <textarea ui-tinymce ng-model="addNoteCtrl.note.content" rows="20" ng-required></textarea>
+    <textarea ui-tinymce="addNoteCtrl.tinymceOptions" ng-model="addNoteCtrl.note.content"
+      rows="20" ng-required>
+    </textarea>
   </fieldset>
 
   <fieldset class="form-group">

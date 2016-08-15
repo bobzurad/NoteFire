@@ -8,6 +8,9 @@ angular
       var controller = this;
 
       controller.showWarning = false;
+      controller.tinymceOptions = {
+        removed_menuitems: 'newdocument'
+      };
 
       if (currentAuth) {
         controller.note = NoteService.getNoteById($routeParams.id);

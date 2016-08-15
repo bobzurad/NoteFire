@@ -8,6 +8,9 @@ angular
       var controller = this;
 
       controller.note = {};
+      controller.tinymceOptions = {
+        removed_menuitems: 'newdocument'
+      };
 
       angular.element("#title").focus();
       angular.element("#newNoteLink").show();
