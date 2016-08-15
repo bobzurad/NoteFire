@@ -9,7 +9,8 @@ angular
 
       controller.showWarning = false;
       controller.tinymceOptions = {
-        removed_menuitems: 'newdocument'
+        removed_menuitems: 'newdocument',
+        statusbar: false
       };
 
       if (currentAuth) {

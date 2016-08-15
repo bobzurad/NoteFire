@@ -9,7 +9,8 @@ angular
 
       controller.note = {};
       controller.tinymceOptions = {
-        removed_menuitems: 'newdocument'
+        removed_menuitems: 'newdocument',
+        statusbar: false
       };
 
       angular.element("#title").focus();
