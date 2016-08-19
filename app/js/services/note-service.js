@@ -25,7 +25,9 @@ angular
       };
 
       NoteService.close = function() {
-        notes.$destroy();
+        if (notes) {
+          notes.$destroy();
+        }
       };
 
       NoteService.getNotes = function() {
@@ -33,7 +35,15 @@ angular
       };
 
       NoteService.addNote = function(note) {
-        return notes.$add(note);
+        if (notes) {
+          return notes.$add(note);
+        } else {
+          var user = Auth.$getAuth();
+          var ref = firebase.database().ref('notes/' + user.uid);
+          var fbNotes = $firebaseArray(ref);
+
+          return fbNotes.$add(note);
+        }
       };
 
       NoteService.deleteNote = function(note) {

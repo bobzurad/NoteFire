@@ -19,7 +19,14 @@ angular
       };
 
       PublicNoteService.addNote = function(note) {
-        return notes.$add(note);
+        if (notes) {
+          return notes.$add(note);
+        } else {
+          var ref = firebase.database().ref('notes/public');
+          var fbNotes = $firebaseArray(ref);
+
+          return fbNotes.$add(note);
+        }
       };
 
       PublicNoteService.deleteNote = function(note) {
