@@ -10,7 +10,8 @@ angular
       controller.showWarning = false;
       controller.tinymceOptions = {
         removed_menuitems: 'newdocument',
-        statusbar: false
+        statusbar: false,
+        plugins: ["autolink", "preview", "paste"]
       };
 
       if (currentAuth) {

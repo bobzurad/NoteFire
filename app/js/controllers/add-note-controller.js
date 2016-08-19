@@ -10,7 +10,8 @@ angular
       controller.note = {};
       controller.tinymceOptions = {
         removed_menuitems: 'newdocument',
-        statusbar: false
+        statusbar: false,
+        plugins: ["autolink", "preview", "paste"]
       };
 
       angular.element("#newNoteLink").show();

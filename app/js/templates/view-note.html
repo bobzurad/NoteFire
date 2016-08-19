@@ -12,5 +12,8 @@
   </a>
 </div>
 
-<div class="card col-xs-12" ng-bind-html="viewNoteCtrl.trustedHtml">
+<div class="col-xs-12">
+  <textarea ui-tinymce="viewNoteCtrl.tinymceOptions" ng-model="viewNoteCtrl.note.content"
+    rows="20" ng-required>
+  </textarea>
 </div>
