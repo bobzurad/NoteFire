@@ -24,14 +24,26 @@ angular
                 id: note.$id,
                 dateCreated: note.dateCreated,
                 title: sjcl.decrypt(currentAuth.uid, note.title),
-                content: sjcl.decrypt(currentAuth.uid, note.content).replace(/<\/?[^>]+>/gi, '').substr(0, 300)
+                content: sjcl.decrypt(currentAuth.uid, note.content)
+                  .replace(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g, "http://...") //this regex from taken from http://stackoverflow.com/a/26764609
+                  .replace(/<\/?[^>]+>/gi, '')
+                  .replace(/&nbsp;/g," ")
+                  .replace(/&rsquo;/g, "'")
+                  .replace(/&middot;/g, "")
+                  .substr(0, 300)
               };
             } else {
               return {
                 id: note.$id,
                 dateCreated: note.dateCreated,
                 title: note.title,
-                content: note.content.replace(/<\/?[^>]+>/gi, '').substr(0, 300)
+                content: note.content
+                  .replace(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g, "http://...") //this regex from taken from http://stackoverflow.com/a/26764609
+                  .replace(/<\/?[^>]+>/gi, '')
+                  .replace(/&nbsp;/g," ")
+                  .replace(/&rsquo;/g, "'")
+                  .replace(/&middot;/g, "")
+                  .substr(0, 300)
               };
             }
           });
