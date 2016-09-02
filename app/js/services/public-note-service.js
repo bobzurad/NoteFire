@@ -30,9 +30,7 @@ angular
       };
 
       PublicNoteService.deleteNote = function(note) {
-        if (notes) {
-          return notes.$remove(note);
-        } else if (note.$remove) {
+        if (note.$remove) {
           return note.$remove();
         } else {
           throw new Error("error deleting note");
@@ -46,9 +44,7 @@ angular
       };
 
       PublicNoteService.updateNote = function(note) {
-        if (notes) {
-          return notes.$save(note);
-        } else if (note.$save) {
+        if (note.$save) {
           return note.$save();
         } else {
           throw new Exception("error saving note");
