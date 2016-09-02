@@ -40,12 +40,9 @@ angular
       };
 
       PublicNoteService.getNoteById = function(id) {
-        if (notes) {
-          return notes.$getRecord(id);
-        } else {
-          var ref = firebase.database().ref('notes/public/' + id);
-          return $firebaseObject(ref);
-        }
+        var ref = firebase.database().ref('notes/public/' + id);
+
+        return $firebaseObject(ref);
       };
 
       PublicNoteService.updateNote = function(note) {

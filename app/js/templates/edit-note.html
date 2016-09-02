@@ -4,13 +4,13 @@
 
   <fieldset class="form-group">
     <span class="form-control-label"></span>
-    <input type="text" ng-model="editNoteCtrl.note.title" class="form-control"
+    <input type="text" ng-model="editNoteCtrl.noteTitle" class="form-control"
             placeholder="Title" maxlength="200" required>
   </fieldset>
 
   <fieldset class="form-group">
     <span class="form-control-label"></span>
-    <textarea ui-tinymce="editNoteCtrl.tinymceOptions" ng-model="editNoteCtrl.note.content"
+    <textarea ui-tinymce="editNoteCtrl.tinymceOptions" ng-model="editNoteCtrl.noteContent"
       rows="20" ng-required>
     </textarea>
   </fieldset>

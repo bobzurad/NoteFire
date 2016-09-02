@@ -19,12 +19,21 @@ angular
         .$loaded()
         .then(function(notes) {
           controller.notes = notes.map(function(note) {
-            return {
-              id: note.$id,
-              dateCreated: note.dateCreated,
-              title: note.title,
-              content: note.content.replace(/<\/?[^>]+>/gi, '').substr(0, 300)
-            };
+            if (note.isEncrypted) {
+              return {
+                id: note.$id,
+                dateCreated: note.dateCreated,
+                title: sjcl.decrypt(currentAuth.uid, note.title),
+                content: sjcl.decrypt(currentAuth.uid, note.content).replace(/<\/?[^>]+>/gi, '').substr(0, 300)
+              };
+            } else {
+              return {
+                id: note.$id,
+                dateCreated: note.dateCreated,
+                title: note.title,
+                content: note.content.replace(/<\/?[^>]+>/gi, '').substr(0, 300)
+              };
+            }
           });
         });
 

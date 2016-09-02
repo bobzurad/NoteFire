@@ -35,10 +35,15 @@ angular
       };
 
       NoteService.addNote = function(note) {
+        var user = Auth.$getAuth();
+
+        note.title = sjcl.encrypt(user.uid, note.title);
+        note.content = sjcl.encrypt(user.uid, note.content);
+        note.isEncrypted = true;
+
         if (notes) {
           return notes.$add(note);
         } else {
-          var user = Auth.$getAuth();
           var ref = firebase.database().ref('notes/' + user.uid);
           var fbNotes = $firebaseArray(ref);
 
@@ -47,9 +52,7 @@ angular
       };
 
       NoteService.deleteNote = function(note) {
-        if (notes) {
-          return notes.$remove(note);
-        } else if (note.$remove) {
+        if (note.$remove) {
           return note.$remove();
         } else {
           throw new Error("error deleting note");
@@ -57,19 +60,20 @@ angular
       };
 
       NoteService.getNoteById = function(id) {
-        if (notes) {
-          return notes.$getRecord(id);
-        } else {
-          var user = Auth.$getAuth();
-          var ref = firebase.database().ref('notes/' + user.uid + '/' + id);
-          return $firebaseObject(ref);
-        }
+        var user = Auth.$getAuth();
+        var ref = firebase.database().ref('notes/' + user.uid + '/' + id);
+
+        return $firebaseObject(ref);
       };
 
       NoteService.updateNote = function(note) {
-        if (notes) {
-          return notes.$save(note);
-        } else if (note.$save) {
+        var user = Auth.$getAuth();
+
+        note.title = sjcl.encrypt(user.uid, note.title);
+        note.content = sjcl.encrypt(user.uid, note.content);
+        note.isEncrypted = true;
+
+        if (note.$save) {
           return note.$save();
         } else {
           throw new Error("error saving note");

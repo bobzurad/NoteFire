@@ -23,6 +23,7 @@
     "jquery": "^2.2.0",
     "requirejs": "^2.1.22",
     "requirejs-text": "^2.0.12",
+    "sjcl": "^1.0.3",
     "tether": "^1.1.1",
     "tinymce": "^4.4.1"
   },

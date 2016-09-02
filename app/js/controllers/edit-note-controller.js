@@ -15,9 +15,25 @@ angular
       };
 
       if (currentAuth) {
-        controller.note = NoteService.getNoteById($routeParams.id);
+        NoteService.getNoteById($routeParams.id)
+          .$loaded(function(note) {
+            controller.note = note;
+            if (note.isEncrypted) {
+              controller.note.title = sjcl.decrypt(currentAuth.uid, note.title);
+              controller.note.content = sjcl.decrypt(currentAuth.uid, note.content);
+              controller.note.isEncrypted = false;
+            }
+            //these values used by the view to prevent user from seeing encryption while saving note
+            controller.noteTitle = controller.note.title;
+            controller.noteContent = controller.note.content;
+          });
       } else {
-        controller.note = PublicNoteService.getNoteById($routeParams.id);
+        PublicNoteService.getNoteById($routeParams.id)
+          .$loaded(function(note) {
+            controller.note = note;
+            controller.noteTitle = controller.note.title;
+            controller.noteContent = controller.note.content;
+          });
       }
 
       angular.element("#newNoteLink").show();
@@ -32,6 +48,9 @@ angular
         angular.element("#saveButton").addClass("disabled");
         angular.element("#saveButtonText").hide();
         angular.element("#saveButtonIcon").show();
+
+        controller.note.title = controller.noteTitle;
+        controller.note.content = controller.noteContent;
 
         if (currentAuth) {
           NoteService

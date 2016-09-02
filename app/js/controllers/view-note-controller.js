@@ -16,9 +16,20 @@ angular
       };
 
       if (currentAuth) {
-        controller.note = NoteService.getNoteById($routeParams.id);
+        NoteService.getNoteById($routeParams.id)
+          .$loaded(function(note) {
+            controller.note = note;
+            if (note.isEncrypted) {
+              controller.note.title = sjcl.decrypt(currentAuth.uid, note.title);
+              controller.note.content = sjcl.decrypt(currentAuth.uid, note.content);
+              controller.note.isEncrypted = false;
+            }
+          });
       } else {
-        controller.note = PublicNoteService.getNoteById($routeParams.id);
+        PublicNoteService.getNoteById($routeParams.id)
+          .$loaded(function(note) {
+            controller.note = note;            
+          });
       }
 
       angular.element("#newNoteLink").show();
