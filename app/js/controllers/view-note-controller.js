@@ -12,7 +12,16 @@ angular
         toolbar: false,
         menubar: false,
         statusbar: false,
-        plugins: ["autolink"]
+        setup: function(editor){
+          //preserve hyperlink navigation (http://stackoverflow.com/a/34322305)
+          if (editor.settings.readonly) {
+            editor.on('init', function() {
+              $(editor.getBody()).on('click', 'a[href]', function(e) {
+                window.open($(e.currentTarget).attr('href'),'_blank');
+              });
+            });
+          }
+        }
       };
 
       if (currentAuth) {
@@ -28,7 +37,7 @@ angular
       } else {
         PublicNoteService.getNoteById($routeParams.id)
           .$loaded(function(note) {
-            controller.note = note;            
+            controller.note = note;
           });
       }
 
