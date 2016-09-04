@@ -9,6 +9,17 @@
         authDomain: 'notefireapp.firebaseapp.com',
         databaseURL: 'https://notefireapp.firebaseio.com/',
         storageBucket: 'notefireapp.appspot.com',
+      },
+      TinyMceOptions: {
+        removed_menuitems: 'newdocument',
+        statusbar: false,
+        plugins: ["autolink", "preview", "paste", "advlist", "codesample", "image",
+          "imagetools", "link", "media", "nonbreaking", "pagebreak", "print", "searchreplace",
+          "table", "textcolor", "textpattern"
+        ],
+        toolbar1: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table',
+        toolbar2: 'print preview | link image media | forecolor backcolor nonbreaking pagebreak | searchreplace codesample',
+        image_advtab: true
       }
     })
     .config(["$routeProvider", function($routeProvider) {

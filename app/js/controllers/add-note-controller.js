@@ -1,24 +1,14 @@
 angular
   .module('NoteFire')
   .controller('AddNoteController', [
-    '$location', 'NoteService', 'PublicNoteService', 'currentAuth',
-    function($location, NoteService, PublicNoteService, currentAuth) {
+    '$location', 'NoteService', 'PublicNoteService', 'currentAuth', 'Constants',
+    function($location, NoteService, PublicNoteService, currentAuth, Constants) {
       'use strict';
 
       var controller = this;
 
       controller.note = {};
-      controller.tinymceOptions = {
-        removed_menuitems: 'newdocument',
-        statusbar: false,
-        plugins: ["autolink", "preview", "paste", "advlist", "codesample", "image",
-          "imagetools", "link", "media", "nonbreaking", "pagebreak", "print", "searchreplace",
-          "table", "textcolor", "textpattern"
-        ],
-        toolbar1: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table',
-        toolbar2: 'print preview | link image media | forecolor backcolor nonbreaking pagebreak | searchreplace codesample',
-        image_advtab: true
-      };
+      controller.tinymceOptions = Constants.TinyMceOptions;
 
       angular.element("#newNoteLink").show();
       window.scrollTo(0,0);
