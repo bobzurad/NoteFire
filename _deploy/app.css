@@ -1,0 +1,135 @@
+body {
+  padding-top: 55px;  /* to fix navbar-fixed-top overlapping */
+}
+
+a[href="#/new"] {
+  padding-left: 20px;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-collapse .container-fluid {
+  padding: 2rem 2.5rem;
+  border-bottom: 1px solid #55595c;
+}
+
+.navbar-collapse h4 {
+  color: #818a91;
+}
+
+.navbar-collapse .text-muted {
+  color: #818a91;
+}
+
+.album {
+  min-height: 30rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  background-color: #f7f7f7;
+}
+
+.card {
+  float: left;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 5px solid #f7f7f7;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.noteCard {
+  cursor: pointer;
+}
+
+form.ng-submitted .ng-invalid {
+  border-color: red;
+}
+
+@media (max-width: 767px) {
+  .album {
+    padding-top: 1rem;
+  }
+}
+
+.error {
+  color: red;
+}
+
+
+.form-signin,
+.form-register {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .checkbox,
+.form-register .checkbox {
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.form-signin .form-control,
+.form-register .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus,
+.form-register .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"],
+.form-register input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-register #registerPassword {
+  margin-bottom: -1px;
+  border-radius: 0;
+}
+
+.form-signin #signinPassword,
+.form-register #registerConfirmPassword {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+@media (max-width: 767px) {
+  h1.display-2 {
+    display: none;
+  }
+}
+
+p.forgotPasswordText {
+  padding-left: 10px;
+}
+
+.card {
+  white-space: pre-wrap;
+}

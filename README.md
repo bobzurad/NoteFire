@@ -23,14 +23,13 @@ $ npm install
 ```
 
 ###Running on localhost
-You can run this application locally at http://localhost:8001 by running:
 ```bash
 $ npm start
 ```
+This will start two instances of the application. http://localhost:8001 targets the app folder, and http://localhost:8002 targets the \_deploy folder. The port numbers can be changed in package.json.
 
-If you need to run this application at a different port you can change it in package.json.
 ```json
-"start": "http-server ./app -a localhost -p 8001",
+"start": "concurrently --kill-others 'http-server ./app -a localhost -p 8001' 'http-server ./_deploy -a localhost -p 8002'",
 ```
 
 ###Configuration

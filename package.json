@@ -17,8 +17,13 @@
     "angular-ui-tinymce": "0.0.16",
     "angularfire": "^2.0.0",
     "bootstrap": "4.0.0-alpha.2",
+    "concurrently": "^2.2.0",
     "firebase": "^3.0.0",
     "font-awesome": "^4.6.3",
+    "grunt": "^1.0.1",
+    "grunt-angular-templates": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0",
     "http-server": "^0.8.5",
     "jquery": "^2.2.0",
     "requirejs": "^2.1.22",
@@ -30,7 +35,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm install",
-    "start": "http-server ./app -a localhost -p 8001",
+    "start": "concurrently --kill-others 'http-server ./app -a localhost -p 8001' 'http-server ./_deploy -a localhost -p 8002'",
     "pretest": "npm install"
   }
 }
