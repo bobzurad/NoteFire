@@ -175,8 +175,6 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('js/templates/login.html',
-    "<link href=\"css/login.css\" rel=\"stylesheet\">\n" +
-    "\n" +
     "<div>\n" +
     "  <div class=\"col-md-7\">\n" +
     "    <h1 class=\"display-2\">NoteFire</h1>\n" +
@@ -280,8 +278,6 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('js/templates/view-note.html',
     "<public-warning></public-warning>\n" +
-    "\n" +
-    "<link href=\"css/view-note.css\" rel=\"stylesheet\">\n" +
     "\n" +
     "<div class=\"col-sm-11 col-xs-10\">\n" +
     "  <h3>{{ viewNoteCtrl.note.title }}</h3>\n" +

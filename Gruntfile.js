@@ -44,9 +44,13 @@ module.exports = function(grunt) {
     },
     //uglify config
     uglify: {
-      js: {
+      app: {
         src: ['_deploy/app.js'],
         dest: '_deploy/app.js'
+      },
+      libs: {
+        src: ['_deploy/libs.js'],
+        dest: '_deploy/libs.js'
       }
     }
   });
@@ -54,8 +58,8 @@ module.exports = function(grunt) {
   //load tasks
   grunt.loadNpmTasks('grunt-angular-templates');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  //grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   //register default task
-  grunt.registerTask('default', ['ngtemplates', 'concat']);//, 'concat', 'uglify']);
+  grunt.registerTask('default', ['ngtemplates', 'concat', 'uglify']);
 };
