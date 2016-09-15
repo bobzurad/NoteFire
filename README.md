@@ -26,11 +26,8 @@ $ npm install
 ```bash
 $ npm start
 ```
-This will start two instances of the application. http://localhost:8001 targets the app folder, and http://localhost:8002 targets the \_deploy folder. The port numbers can be changed in package.json.
+This will start two instances of the application. http://localhost:8001 targets the app folder, and http://localhost:8002 targets the \_deploy folder. The port numbers can be changed in server.js
 
-```json
-"start": "concurrently --kill-others 'http-server ./app -a localhost -p 8001' 'http-server ./_deploy -a localhost -p 8002'",
-```
 
 ###Configuration
 You can configure this application to point to your own firebase. You'll need to add your own config settings in app/js/app.js
