@@ -27,6 +27,7 @@ a[href="#/new"] {
 
 .navbar {
   margin-bottom: 0;
+  background-color: #02529c;
 }
 
 .navbar-collapse .container-fluid {
@@ -40,6 +41,10 @@ a[href="#/new"] {
 
 .navbar-collapse .text-muted {
   color: #818a91;
+}
+
+.navbar-link {
+  color: #fff !important;
 }
 
 .album {

@@ -11,7 +11,7 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('js/directives/navbar.html',
-    "<div class=\"navbar navbar-fixed-top navbar-dark bg-primary\">\n" +
+    "<div class=\"navbar navbar-fixed-top navbar-dark\">\n" +
     "  <div class=\"container\">\n" +
     "    <ul class=\"nav navbar-nav\">\n" +
     "      <li class=\"nav-item\">\n" +
@@ -27,14 +27,14 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "        </a>\n" +
     "      </li>\n" +
     "      <li class=\"nav-item pull-xs-right\">\n" +
-    "        <a href=\"#/login\" class=\"nav-link isNotAuthenticated\" title=\"Login\">\n" +
+    "        <a href=\"#/login\" class=\"nav-link navbar-link isNotAuthenticated\" title=\"Login\">\n" +
     "          <small>Sign In</small>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "      <li class=\"nav-item pull-xs-right\">\n" +
-    "        <a href=\"#/logout\" class=\"nav-link isAuthenticated\" title=\"Logout\"\n" +
+    "        <a href=\"#/logout\" class=\"nav-link navbar-link isAuthenticated\" title=\"Logout\"\n" +
     "          style=\"display: none;\">\n" +
-    "          <small>Logoff</small>\n" +
+    "          <small>Sign Out</small>\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +
@@ -188,13 +188,13 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "  <div class=\"col-md-7\">\n" +
     "    <h1 class=\"display-2\">NoteFire</h1>\n" +
     "    <p class=\"lead\">\n" +
-    "      Your notes, in the cloud. Create a free account to get started, or try our <a href=\"#/public\">public notes</a>.\n" +
+    "      Your notes, encrypted, in the cloud. Create a free account to get started, or try our <a href=\"#/public\">public notes</a>.\n" +
     "    </p>\n" +
     "  </div>\n" +
     "  <div class=\"col-md-5\">\n" +
     "    <ul id=\"loginTabs\" class=\"nav nav-tabs\" data-tabs=\"tabs\">\n" +
     "      <li class=\"nav-item\">\n" +
-    "        <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#signinDiv\" role=\"tab\">Sign in</a>\n" +
+    "        <a class=\"nav-link active\" data-toggle=\"tab\" href=\"#signinDiv\" role=\"tab\">Sign In</a>\n" +
     "      </li>\n" +
     "      <li class=\"nav-item\">\n" +
     "        <a class=\"nav-link\" data-toggle=\"tab\" href=\"#registerDiv\" role=\"tab\">Register</a>\n" +
@@ -221,7 +221,7 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "            <small><a href=\"#/forgotPassword\">I forgot my password</a></small>\n" +
     "          </p>\n" +
     "          <button id=\"signinButton\" class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">\n" +
-    "            <span id=\"signinButtonText\">Sign in</span>\n" +
+    "            <span id=\"signinButtonText\">Sign In</span>\n" +
     "            <span id=\"signinButtonIcon\" style=\"display: none;\">\n" +
     "              <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\n" +
     "              <span class=\"sr-only\">Loading...</span>\n" +
