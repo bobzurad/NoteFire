@@ -1,6 +1,15 @@
 angular.module('NoteFire').run(['$templateCache', function($templateCache) {
   'use strict';
 
+  $templateCache.put('js/directives/footer.html',
+    "<footer class=\"text-muted\">\n" +
+    "  <div class=\"container\">\n" +
+    "    <p><small>NoteFire created by <a href=\"https://twitter.com/bobzurad\">Bob Zurad</a> and powered by <a href=\"https://github.com/firebase/angularfire\">AngularFire</a></small></p>\n" +
+    "  </div>\n" +
+    "</footer>\n"
+  );
+
+
   $templateCache.put('js/directives/navbar.html',
     "<div class=\"navbar navbar-fixed-top navbar-dark bg-primary\">\n" +
     "  <div class=\"container\">\n" +
