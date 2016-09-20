@@ -21,10 +21,6 @@ footer p {
   padding-top: 10px;
 }
 
-a[href="#/new"] {
-  padding-left: 20px;
-}
-
 .navbar {
   margin-bottom: 0;
   background-color: #02529c;
@@ -45,6 +41,10 @@ a[href="#/new"] {
 
 .navbar-link {
   color: #fff !important;
+}
+
+#newNoteLink {
+  margin-right: 30px;
 }
 
 .album {
@@ -77,8 +77,12 @@ form.ng-submitted .ng-invalid {
 }
 
 @media (max-width: 767px) {
+  /* styles for xs displays */
   .album {
     padding-top: 1rem;
+  }
+  #newNoteLink {
+    margin-right: 0;
   }
 }
 
