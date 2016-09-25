@@ -1,3 +1,5 @@
+<spinner></spinner>
+
 <div ng-repeat="note in homeCtrl.notes | orderBy:'-dateCreated'">
   <div id="{{ note.id }}" class="card col-md-4" ng-click="homeCtrl.onCardClick(note.id)">
     <div class="noteCard">

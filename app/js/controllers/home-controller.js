@@ -18,6 +18,7 @@ angular
       NoteService.getNotes()
         .$loaded()
         .then(function(notes) {
+          angular.element("#spinner").hide();
           controller.notes = notes.map(function(note) {
             if (note.isEncrypted) {
               return {
