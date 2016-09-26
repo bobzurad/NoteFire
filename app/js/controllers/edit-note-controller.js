@@ -41,9 +41,9 @@ angular
           return;
         }
 
-        angular.element("#saveButton").addClass("disabled");
-        angular.element("#saveButtonText").hide();
-        angular.element("#saveButtonIcon").show();
+        angular.element(".saveButton").addClass("disabled");
+        angular.element(".saveButtonText").hide();
+        angular.element(".saveButtonIcon").show();
 
         controller.note.title = controller.noteTitle;
         controller.note.content = controller.noteContent;
@@ -83,9 +83,9 @@ angular
       };
 
       function updateNoteCallback(noteRef) {
-        angular.element("#saveButton").removeClass("disabled");
-        angular.element("#saveButtonIcon").hide();
-        angular.element("#saveButtonText").show();
+        angular.element(".saveButton").removeClass("disabled");
+        angular.element(".saveButtonIcon").hide();
+        angular.element(".saveButtonText").show();
 
         controller.note = {};
         $location.path('/view/' + noteRef.key);

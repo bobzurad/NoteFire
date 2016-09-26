@@ -8,6 +8,7 @@ angular
       var controller = this;
 
       angular.element("#newNoteLink").show();
+      window.scrollTo(0,0);
 
       PublicNoteService.init();
       PublicNoteService.getNotes()

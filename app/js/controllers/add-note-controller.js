@@ -19,9 +19,9 @@ angular
           return;
         }
 
-        angular.element("#saveButton").addClass("disabled");
-        angular.element("#saveButtonText").hide();
-        angular.element("#saveButtonIcon").show();
+        angular.element(".saveButton").addClass("disabled");
+        angular.element(".saveButtonText").hide();
+        angular.element(".saveButtonIcon").show();
 
         var note = {
           title: controller.note.title,
@@ -41,9 +41,9 @@ angular
       };
 
       function addNoteCallback(noteRef) {
-        angular.element("#saveButton").removeClass("disabled");
-        angular.element("#saveButtonIcon").hide();
-        angular.element("#saveButtonText").show();
+        angular.element(".saveButton").removeClass("disabled");
+        angular.element(".saveButtonIcon").hide();
+        angular.element(".saveButtonText").show();
 
         controller.note = {};
 

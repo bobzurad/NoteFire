@@ -12,7 +12,7 @@ angular
         toolbar: false,
         menubar: false,
         statusbar: false,
-        plugins: ["codesample"],
+        plugins: ["autoresize", "codesample"],
         setup: function(editor){
           //preserve hyperlink navigation (http://stackoverflow.com/a/34322305)
           if (editor.settings.readonly) {

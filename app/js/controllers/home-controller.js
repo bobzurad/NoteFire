@@ -13,6 +13,7 @@ angular
       var controller = this;
 
       angular.element("#newNoteLink").show();
+      window.scrollTo(0,0);
 
       NoteService.init();
       NoteService.getNotes()

@@ -3,9 +3,20 @@
 <form name="addNoteForm" ng-submit="addNoteForm.$valid && addNoteCtrl.addNote()" novalidate>
 
   <fieldset class="form-group">
-    <span class="form-control-label"></span>
-    <input id="title" type="text" ng-model="addNoteCtrl.note.title" class="form-control"
-            placeholder="Title" maxlength="200" required>
+    <div class="col-xs-9 padding-left-0">
+      <span class="form-control-label"></span>
+      <input type="text" ng-model="addNoteCtrl.note.title" class="form-control"
+              placeholder="Title" maxlength="200" required>
+    </div>
+    <div class="col-xs-3 padding-right-0">
+      <button id="newNoteTitleButton" class="btn btn-primary pull-xs-right saveButton" type="submit">
+        <span class="saveButtonText">Save Note</span>
+        <span class="saveButtonIcon" style="display: none;">
+          <i class="fa fa-spinner fa-pulse fa-lg"></i>
+          <span class="sr-only">Saving...</span>
+        </span>
+      </button>
+    </div>
   </fieldset>
 
   <fieldset class="form-group">
@@ -16,9 +27,9 @@
   </fieldset>
 
   <fieldset class="form-group">
-    <button id="saveButton" class="btn btn-primary pull-xs-right" type="submit">
-      <span id="saveButtonText">Save Note</span>
-      <span id="saveButtonIcon" style="display: none;">
+    <button id="saveButton" class="btn btn-primary pull-xs-right saveButton" type="submit">
+      <span class="saveButtonText">Save Note</span>
+      <span class="saveButtonIcon" style="display: none;">
         <i class="fa fa-spinner fa-pulse fa-lg"></i>
         <span class="sr-only">Saving...</span>
       </span>

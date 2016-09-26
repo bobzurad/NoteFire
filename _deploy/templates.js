@@ -69,9 +69,20 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "<form name=\"addNoteForm\" ng-submit=\"addNoteForm.$valid && addNoteCtrl.addNote()\" novalidate>\n" +
     "\n" +
     "  <fieldset class=\"form-group\">\n" +
-    "    <span class=\"form-control-label\"></span>\n" +
-    "    <input id=\"title\" type=\"text\" ng-model=\"addNoteCtrl.note.title\" class=\"form-control\"\n" +
-    "            placeholder=\"Title\" maxlength=\"200\" required>\n" +
+    "    <div class=\"col-xs-9 padding-left-0\">\n" +
+    "      <span class=\"form-control-label\"></span>\n" +
+    "      <input type=\"text\" ng-model=\"addNoteCtrl.note.title\" class=\"form-control\"\n" +
+    "              placeholder=\"Title\" maxlength=\"200\" required>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-xs-3 padding-right-0\">\n" +
+    "      <button id=\"newNoteTitleButton\" class=\"btn btn-primary pull-xs-right saveButton\" type=\"submit\">\n" +
+    "        <span class=\"saveButtonText\">Save Note</span>\n" +
+    "        <span class=\"saveButtonIcon\" style=\"display: none;\">\n" +
+    "          <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\n" +
+    "          <span class=\"sr-only\">Saving...</span>\n" +
+    "        </span>\n" +
+    "      </button>\n" +
+    "    </div>\n" +
     "  </fieldset>\n" +
     "\n" +
     "  <fieldset class=\"form-group\">\n" +
@@ -82,9 +93,9 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "  </fieldset>\n" +
     "\n" +
     "  <fieldset class=\"form-group\">\n" +
-    "    <button id=\"saveButton\" class=\"btn btn-primary pull-xs-right\" type=\"submit\">\n" +
-    "      <span id=\"saveButtonText\">Save Note</span>\n" +
-    "      <span id=\"saveButtonIcon\" style=\"display: none;\">\n" +
+    "    <button id=\"saveButton\" class=\"btn btn-primary pull-xs-right saveButton\" type=\"submit\">\n" +
+    "      <span class=\"saveButtonText\">Save Note</span>\n" +
+    "      <span class=\"saveButtonIcon\" style=\"display: none;\">\n" +
     "        <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\n" +
     "        <span class=\"sr-only\">Saving...</span>\n" +
     "      </span>\n" +
@@ -101,9 +112,20 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "<form name=\"editNoteForm\" ng-submit=\"editNoteForm.$valid && editNoteCtrl.saveNote()\" novalidate>\n" +
     "\n" +
     "  <fieldset class=\"form-group\">\n" +
-    "    <span class=\"form-control-label\"></span>\n" +
-    "    <input type=\"text\" ng-model=\"editNoteCtrl.noteTitle\" class=\"form-control\"\n" +
-    "            placeholder=\"Title\" maxlength=\"200\" required>\n" +
+    "    <div class=\"col-xs-9 padding-left-0\">\n" +
+    "      <span class=\"form-control-label\"></span>\n" +
+    "      <input type=\"text\" ng-model=\"editNoteCtrl.noteTitle\" class=\"form-control\"\n" +
+    "              placeholder=\"Title\" maxlength=\"200\" required>\n" +
+    "    </div>\n" +
+    "    <div class=\"col-xs-3 padding-right-0\">\n" +
+    "      <button id=\"editNoteTitleButton\" type=\"submit\" class=\"btn btn-primary pull-xs-right saveButton\">\n" +
+    "        <span class=\"saveButtonText\">Save Note</span>\n" +
+    "        <span class=\"saveButtonIcon\" style=\"display: none;\">\n" +
+    "          <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\n" +
+    "          <span class=\"sr-only\">Saving...</span>\n" +
+    "        </span>\n" +
+    "      </button>\n" +
+    "    </div>\n" +
     "  </fieldset>\n" +
     "\n" +
     "  <fieldset class=\"form-group\">\n" +
@@ -114,14 +136,14 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "  </fieldset>\n" +
     "\n" +
     "  <fieldset ng-show=\"!editNoteCtrl.showWarning\" class=\"form-group buttonGroup\">\n" +
-    "    <div class=\"col-xs-6\">\n" +
+    "    <div class=\"col-xs-6 padding-left-0\">\n" +
     "      <input type=\"button\" ng-click=\"editNoteCtrl.showDeleteWarning()\"\n" +
     "        class=\"btn btn-sm btn-danger\" role=\"button\" value=\"Delete Note\" />\n" +
     "    </div>\n" +
-    "    <div class=\"col-xs-6\">\n" +
-    "      <button id=\"saveButton\" type=\"submit\" class=\"btn btn-primary pull-xs-right\">\n" +
-    "        <span id=\"saveButtonText\">Save Note</span>\n" +
-    "        <span id=\"saveButtonIcon\" style=\"display: none;\">\n" +
+    "    <div class=\"col-xs-6 padding-right-0\">\n" +
+    "      <button type=\"submit\" class=\"btn btn-primary pull-xs-right saveButton\">\n" +
+    "        <span class=\"saveButtonText\">Save Note</span>\n" +
+    "        <span class=\"saveButtonIcon\" style=\"display: none;\">\n" +
     "          <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\n" +
     "          <span class=\"sr-only\">Saving...</span>\n" +
     "        </span>\n" +
