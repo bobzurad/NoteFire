@@ -63,7 +63,8 @@ angular
             NoteService.addNote({
               title: 'Your First Note!',
               content: 'Welcome to FireNote!',
-              dateCreated: Date.now()
+              dateCreated: Date.now(),
+              dateUpdated: Date.now()
             })
             .then(function() {
               //everything is awesome. cleanup and redirect to home

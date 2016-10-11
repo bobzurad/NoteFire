@@ -1,6 +1,6 @@
 <spinner></spinner>
 
-<div ng-repeat="note in homeCtrl.notes | orderBy:'-dateCreated'">
+<div ng-repeat="note in homeCtrl.notes | orderBy:'-dateUpdated'">
   <div id="{{ note.id }}" class="card col-md-4" ng-click="homeCtrl.onCardClick(note.id)">
     <div class="noteCard">
       <h4>{{ note.title }}</h4>

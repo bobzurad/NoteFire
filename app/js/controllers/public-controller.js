@@ -19,6 +19,7 @@ angular
             return {
               id: note.$id,
               dateCreated: note.dateCreated,
+              dateUpdated: note.dateUpdated,
               title: note.title,
               content: note.content
                 .replace(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g, "http://...") //this regex from taken from http://stackoverflow.com/a/26764609

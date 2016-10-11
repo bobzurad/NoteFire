@@ -26,7 +26,8 @@ angular
         var note = {
           title: controller.note.title,
           content: controller.note.content,
-          dateCreated: Date.now()
+          dateCreated: Date.now(),
+          dateUpdated: Date.now()
         };
 
         if (currentAuth) {

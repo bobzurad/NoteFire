@@ -47,6 +47,7 @@ angular
 
         controller.note.title = controller.noteTitle;
         controller.note.content = controller.noteContent;
+        controller.note.dateUpdated = Date.now();
 
         if (currentAuth) {
           NoteService

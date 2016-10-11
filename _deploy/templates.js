@@ -205,7 +205,7 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
   $templateCache.put('js/templates/home.html',
     "<spinner></spinner>\n" +
     "\n" +
-    "<div ng-repeat=\"note in homeCtrl.notes | orderBy:'-dateCreated'\">\n" +
+    "<div ng-repeat=\"note in homeCtrl.notes | orderBy:'-dateUpdated'\">\n" +
     "  <div id=\"{{ note.id }}\" class=\"card col-md-4\" ng-click=\"homeCtrl.onCardClick(note.id)\">\n" +
     "    <div class=\"noteCard\">\n" +
     "      <h4>{{ note.title }}</h4>\n" +
@@ -310,7 +310,7 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "\n" +
     "<spinner></spinner>\n" +
     "\n" +
-    "<div ng-repeat=\"note in publicCtrl.notes | orderBy:'-dateCreated'\">\n" +
+    "<div ng-repeat=\"note in publicCtrl.notes | orderBy:'-dateUpdated'\">\n" +
     "  <div id=\"{{ note.id }}\" class=\"card col-md-4\" ng-click=\"publicCtrl.onCardClick(note.id)\">\n" +
     "    <div class=\"noteCard\">\n" +
     "      <h4>{{ note.title }}</h4>\n" +
