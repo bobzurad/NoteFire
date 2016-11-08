@@ -21,35 +21,34 @@ angular
         .then(function(notes) {
           angular.element("#spinner").hide();
           controller.notes = notes.map(function(note) {
+            var mappedNote = {
+              id: note.$id,
+              dateCreated: note.dateCreated,
+              dateUpdated: note.dateUpdated,
+            };
             if (note.isEncrypted) {
-              return {
-                id: note.$id,
-                dateCreated: note.dateCreated,
-                dateUpdated: note.dateUpdated,
-                title: sjcl.decrypt(currentAuth.uid, note.title),
-                content: sjcl.decrypt(currentAuth.uid, note.content)
-                  .replace(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g, "http://...") //this regex from taken from http://stackoverflow.com/a/26764609
-                  .replace(/<\/?[^>]+>/gi, '')
-                  .replace(/&nbsp;/g," ")
-                  .replace(/&rsquo;/g, "'")
-                  .replace(/&middot;/g, "")
-                  .substr(0, 300)
-              };
+              mappedNote.title = sjcl.decrypt(currentAuth.uid, note.title);
+              mappedNote.content = sjcl.decrypt(currentAuth.uid, note.content);
             } else {
-              return {
-                id: note.$id,
-                dateCreated: note.dateCreated,
-                dateUpdated: note.dateUpdated,
-                title: note.title,
-                content: note.content
-                  .replace(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g, "http://...") //this regex from taken from http://stackoverflow.com/a/26764609
-                  .replace(/<\/?[^>]+>/gi, '')
-                  .replace(/&nbsp;/g," ")
-                  .replace(/&rsquo;/g, "'")
-                  .replace(/&middot;/g, "")
-                  .substr(0, 300)
-              };
+                mappedNote.title = note.title,
+                mappedNote.content = note.content;
             }
+            //filter content and only show first 300 characters
+            mappedNote.content = mappedNote.content.replace(/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g, "http://...") //this regex from taken from http://stackoverflow.com/a/26764609
+              .replace(/<\/?[^>]+>/gi, '')
+              .replace(/&nbsp;/g," ")
+              .replace(/&rsquo;/g, "'")
+              .replace(/&middot;/g, "")
+              .substr(0, 300);
+
+            //remove very long strings that would stretch the card on smaller screens
+            var content = "";
+            mappedNote.content = mappedNote.content.split(" ").map(function(word) {
+              word.length > 30 ? content += "... " : content += (word + " ");
+            });
+            mappedNote.content = content;
+
+            return mappedNote;
           });
         });
 

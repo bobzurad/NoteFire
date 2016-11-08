@@ -16,7 +16,7 @@ angular
         .then(function(notes) {
           angular.element("#spinner").hide();
           controller.notes = notes.map(function(note) {
-            return {
+            var mappedNote = {
               id: note.$id,
               dateCreated: note.dateCreated,
               dateUpdated: note.dateUpdated,
@@ -29,6 +29,15 @@ angular
                 .replace(/&middot;/g, "")
                 .substr(0, 300)
             };
+
+            //remove very long strings that would stretch the card on smaller screens
+            var content = "";
+            mappedNote.content = mappedNote.content.split(" ").map(function(word) {
+              word.length > 30 ? content += "... " : content += (word + " ");
+            });
+            mappedNote.content = content;
+
+            return mappedNote;
           });
         });
 
