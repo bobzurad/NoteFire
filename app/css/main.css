@@ -17,6 +17,13 @@ footer {
   width: 100%;
 }
 
+/* fix for footer on very small devices (iPhone 5, Galaxy S5, etc) */
+@media (max-width: 360px) {
+  footer {
+    height: 75px;
+  }
+}
+
 footer p {
   padding-top: 10px;
 }
