@@ -37,7 +37,7 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "        <a id=\"newNoteLink\" href=\"#/new\" class=\"nav-link navbar-link\" title=\"New Note\"\n" +
     "          style=\"display: none;\">\n" +
     "          <i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i>\n" +
-    "          Create Note\n" +
+    "          New Note\n" +
     "        </a>\n" +
     "      </li>\n" +
     "    </ul>\n" +

@@ -17,8 +17,15 @@ footer {
   width: 100%;
 }
 
-/* fix for footer on very small devices (iPhone 5, Galaxy S5, etc) */
+/* fixes for very small devices (iPhone 5, Galaxy S5, etc) */
 @media (max-width: 360px) {
+  .navbar .container {
+    margin-left: -26px;
+    margin-right: -26px;
+  }
+  a.navbar-brand {
+    padding-right: 0;
+  }
   footer {
     height: 75px;
   }
