@@ -337,7 +337,7 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "  </a>\n" +
     "</div>\n" +
     "\n" +
-    "<div class=\"col-xs-12\">\n" +
+    "<div class=\"col-xs-12 padding-left-0 padding-right-0\">\n" +
     "  <textarea ui-tinymce=\"viewNoteCtrl.tinymceOptions\" ng-model=\"viewNoteCtrl.note.content\"\n" +
     "    rows=\"20\" ng-required>\n" +
     "  </textarea>\n" +
