@@ -13,7 +13,7 @@
       TinyMceOptions: {
         removed_menuitems: 'newdocument',
         statusbar: false,
-        plugins: ["autolink", "autoresize", "preview", "paste", "advlist", "codesample", "image",
+        plugins: ["autolink", "autoresize", "preview", "paste", "lists", "advlist", "codesample", "image",
           "imagetools", "link", "media", "nonbreaking", "pagebreak", "print", "searchreplace",
           "table", "textcolor", "textpattern"
         ],
