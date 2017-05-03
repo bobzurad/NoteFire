@@ -25,6 +25,7 @@
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-uglify": "^2.0.0",
     "jquery": "^2.2.0",
+    "quill": "^1.2.4",
     "requirejs": "^2.1.22",
     "requirejs-text": "^2.0.12",
     "sjcl": "^1.0.3",
