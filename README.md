@@ -45,7 +45,7 @@ FirebaseConfig: {
 ### Deploying to Firebase ###
 Before deploying to your firebase instance, update the files in \_deploy. To do this, run:
 ```bash
-$ grunt
+$ npm run build
 ```
 To deploy the files in \_deploy to Firebaes, run:
 ```bash
