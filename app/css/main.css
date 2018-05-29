@@ -111,8 +111,3 @@ form.ng-submitted .ng-invalid {
 .padding-right-0 {
   padding-right: 0;
 }
-
-#newNoteTitleButton,
-#editNoteTitleButton {
-  margin-top: 24px;
-}
