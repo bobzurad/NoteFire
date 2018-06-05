@@ -2,11 +2,11 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('js/directives/footer.html',
-    "<footer class=\"text-muted\">\r" +
+    "<footer class=\"footer text-muted\">\r" +
     "\n" +
     "  <div class=\"container\">\r" +
     "\n" +
-    "    <p><small>NoteFire created by <a href=\"https://twitter.com/bobzurad\">Bob Zurad</a> and powered by <a href=\"https://github.com/firebase/angularfire\">AngularFire</a></small></p>\r" +
+    "    <small>NoteFire created by <a href=\"https://twitter.com/bobzurad\">Bob Zurad</a> and powered by <a href=\"https://github.com/firebase/angularfire\">AngularFire</a></small>\r" +
     "\n" +
     "  </div>\r" +
     "\n" +
@@ -16,70 +16,73 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('js/directives/navbar.html',
-    "<div class=\"navbar navbar-fixed-top navbar-dark\">\r" +
+    "<nav class=\"navbar navbar-expand-md navbar-dark fixed-top\">\r" +
     "\n" +
     "  <div class=\"container\">\r" +
     "\n" +
-    "    <ul class=\"nav navbar-nav\">\r" +
+    "    <a href=\"#/home\" class=\"navbar-brand\" title=\"Home\">\r" +
     "\n" +
-    "      <li class=\"nav-item\">\r" +
+    "      NoteFire\r" +
     "\n" +
-    "        <a href=\"#/home\" class=\"navbar-brand\" title=\"Home\">\r" +
+    "      <i class=\"fa fa-fire fa-lg\" aria-hidden=\"true\"></i>\r" +
     "\n" +
-    "          NoteFire\r" +
+    "    </a>\r" +
     "\n" +
-    "          <i class=\"fa fa-fire fa-lg\" aria-hidden=\"true\"></i>\r" +
+    "    <button class=\"navbar-toggler collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r" +
     "\n" +
-    "        </a>\r" +
+    "      aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r" +
     "\n" +
-    "      </li>\r" +
+    "      <span class=\"navbar-toggler-icon\"></span>\r" +
     "\n" +
-    "      <li class=\"nav-item pull-xs-right\">\r" +
+    "    </button>\r" +
     "\n" +
-    "        <a href=\"#/login\" class=\"nav-link navbar-link isNotAuthenticated\" title=\"Login\">\r" +
+    "    <div class=\"navbar-collapse collapse\" id=\"navbarCollapse\">\r" +
     "\n" +
-    "          <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i>\r" +
+    "      <ul class=\"nav navbar-nav ml-auto\">\r" +
     "\n" +
-    "          <small>Sign In</small>\r" +
+    "        <li class=\"nav-item\">\r" +
     "\n" +
-    "        </a>\r" +
+    "          <a id=\"newNoteLink\" href=\"#/new\" class=\"nav-link navbar-link\" title=\"New Note\" style=\"display: none;\">\r" +
     "\n" +
-    "      </li>\r" +
+    "            <i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i>\r" +
     "\n" +
-    "      <li class=\"nav-item pull-xs-right\">\r" +
+    "            New Note\r" +
     "\n" +
-    "        <a href=\"#/logout\" class=\"nav-link navbar-link isAuthenticated\" title=\"Logout\"\r" +
+    "          </a>\r" +
     "\n" +
-    "          style=\"display: none;\">\r" +
+    "        </li>\r" +
     "\n" +
-    "          <i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i>\r" +
+    "        <li class=\"nav-item\">\r" +
     "\n" +
-    "          <small>Sign Out</small>\r" +
+    "          <a href=\"#/login\" class=\"nav-link navbar-link isNotAuthenticated\" title=\"Login\">\r" +
     "\n" +
-    "        </a>\r" +
+    "            <i class=\"fa fa-sign-in\" aria-hidden=\"true\"></i>\r" +
     "\n" +
-    "      </li>\r" +
+    "            <small>Sign In</small>\r" +
     "\n" +
-    "      <li class=\"nav-item pull-xs-right\">\r" +
+    "          </a>\r" +
     "\n" +
-    "        <a id=\"newNoteLink\" href=\"#/new\" class=\"nav-link navbar-link\" title=\"New Note\"\r" +
+    "        </li>\r" +
     "\n" +
-    "          style=\"display: none;\">\r" +
+    "        <li class=\"nav-item\">\r" +
     "\n" +
-    "          <i class=\"fa fa-plus-square-o\" aria-hidden=\"true\"></i>\r" +
+    "          <a href=\"#/logout\" class=\"nav-link navbar-link isAuthenticated\" title=\"Logout\" style=\"display: none;\">\r" +
     "\n" +
-    "          New Note\r" +
+    "            <i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i>\r" +
     "\n" +
-    "        </a>\r" +
+    "            <small>Sign Out</small>\r" +
     "\n" +
-    "      </li>\r" +
+    "          </a>\r" +
     "\n" +
-    "    </ul>\r" +
+    "        </li>\r" +
+    "\n" +
+    "      </ul>\r" +
+    "\n" +
+    "    </div>\r" +
     "\n" +
     "  </div>\r" +
     "\n" +
-    "</div>\r" +
-    "\n"
+    "</nav>"
   );
 
 
@@ -98,7 +101,7 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
   $templateCache.put('js/directives/spinner.html',
     "<div id=\"spinner\" class=\"row\">\r" +
     "\n" +
-    "  <div class=\"col-xs-12 col-xs-offset-5\">\r" +
+    "  <div class=\"col-12 d-flex justify-content-center\">\r" +
     "\n" +
     "    <i class=\"fa fa-spinner fa-pulse fa-5x\"></i>\r" +
     "\n" +
@@ -120,35 +123,39 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "\n" +
     "  <fieldset class=\"form-group\">\r" +
     "\n" +
-    "    <div class=\"col-xs-9 padding-left-0\">\r" +
+    "    <div class=\"form-row\">\r" +
     "\n" +
-    "      <span class=\"form-control-label\"></span>\r" +
+    "      <div class=\"col-9 padding-left-0\">\r" +
     "\n" +
-    "      <input type=\"text\" ng-model=\"addNoteCtrl.note.title\" class=\"form-control\"\r" +
+    "        <span class=\"form-control-label\"></span>\r" +
     "\n" +
-    "              placeholder=\"Title\" maxlength=\"200\" required>\r" +
+    "        <input type=\"text\" ng-model=\"addNoteCtrl.note.title\" class=\"form-control\"\r" +
+    "\n" +
+    "                placeholder=\"Title\" maxlength=\"200\" required>\r" +
+    "\n" +
+    "      </div>\r" +
+    "\n" +
+    "      <div class=\"col-3 d-flex justify-content-end padding-right-0\">\r" +
+    "\n" +
+    "        <button id=\"newNoteTitleButton\" class=\"btn btn-primary saveButton\" type=\"submit\">\r" +
+    "\n" +
+    "          <span class=\"saveButtonText\">Save Note</span>\r" +
+    "\n" +
+    "          <span class=\"saveButtonIcon\" style=\"display: none;\">\r" +
+    "\n" +
+    "            <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\r" +
+    "\n" +
+    "            <span class=\"sr-only\">Saving...</span>\r" +
+    "\n" +
+    "          </span>\r" +
+    "\n" +
+    "        </button>\r" +
+    "\n" +
+    "      </div>\r" +
     "\n" +
     "    </div>\r" +
     "\n" +
-    "    <div class=\"col-xs-3 padding-right-0\">\r" +
-    "\n" +
-    "      <button id=\"newNoteTitleButton\" class=\"btn btn-primary pull-xs-right saveButton\" type=\"submit\">\r" +
-    "\n" +
-    "        <span class=\"saveButtonText\">Save Note</span>\r" +
-    "\n" +
-    "        <span class=\"saveButtonIcon\" style=\"display: none;\">\r" +
-    "\n" +
-    "          <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\r" +
-    "\n" +
-    "          <span class=\"sr-only\">Saving...</span>\r" +
-    "\n" +
-    "        </span>\r" +
-    "\n" +
-    "      </button>\r" +
-    "\n" +
-    "    </div>\r" +
-    "\n" +
-    "  </fieldset>\r" +
+    "    </fieldset>\r" +
     "\n" +
     "\r" +
     "\n" +
@@ -168,19 +175,27 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "\n" +
     "  <fieldset class=\"form-group\">\r" +
     "\n" +
-    "    <button id=\"saveButton\" class=\"btn btn-primary pull-xs-right saveButton\" type=\"submit\">\r" +
+    "    <div class=\"form-row\">\r" +
     "\n" +
-    "      <span class=\"saveButtonText\">Save Note</span>\r" +
+    "      <div class=\"col d-flex justify-content-end\">\r" +
     "\n" +
-    "      <span class=\"saveButtonIcon\" style=\"display: none;\">\r" +
+    "        <button id=\"saveButton\" class=\"btn btn-primary saveButton\" type=\"submit\">\r" +
     "\n" +
-    "        <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\r" +
+    "          <span class=\"saveButtonText\">Save Note</span>\r" +
     "\n" +
-    "        <span class=\"sr-only\">Saving...</span>\r" +
+    "          <span class=\"saveButtonIcon\" style=\"display: none;\">\r" +
     "\n" +
-    "      </span>\r" +
+    "            <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\r" +
     "\n" +
-    "    </button>\r" +
+    "            <span class=\"sr-only\">Saving...</span>\r" +
+    "\n" +
+    "          </span>\r" +
+    "\n" +
+    "        </button>\r" +
+    "\n" +
+    "      </div>\r" +
+    "\n" +
+    "    </div> \r" +
     "\n" +
     "  </fieldset>\r" +
     "\n" +
@@ -202,37 +217,41 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "\n" +
     "  <fieldset class=\"form-group\">\r" +
     "\n" +
-    "    <div class=\"col-xs-9 padding-left-0\">\r" +
+    "    <div class=\"form-row\">\r" +
     "\n" +
-    "      <span class=\"form-control-label\"></span>\r" +
+    "      <div class=\"col-9 padding-left-0\">\r" +
     "\n" +
-    "      <input type=\"text\" ng-model=\"editNoteCtrl.noteTitle\" class=\"form-control\"\r" +
+    "        <span class=\"form-control-label\"></span>\r" +
     "\n" +
-    "              placeholder=\"Title\" maxlength=\"200\" required>\r" +
+    "        <input type=\"text\" ng-model=\"editNoteCtrl.noteTitle\" class=\"form-control\"\r" +
     "\n" +
-    "    </div>\r" +
+    "                placeholder=\"Title\" maxlength=\"200\" required>\r" +
     "\n" +
-    "    <div class=\"col-xs-3 padding-right-0\">\r" +
+    "      </div>\r" +
     "\n" +
-    "      <button id=\"editNoteTitleButton\" type=\"submit\" class=\"btn btn-primary pull-xs-right saveButton\">\r" +
+    "      <div class=\"col-3 d-flex justify-content-end padding-right-0\">\r" +
     "\n" +
-    "        <span class=\"saveButtonText\">Save Note</span>\r" +
+    "        <button id=\"editNoteTitleButton\" type=\"submit\" class=\"btn btn-primary saveButton\">\r" +
     "\n" +
-    "        <span class=\"saveButtonIcon\" style=\"display: none;\">\r" +
+    "          <span class=\"saveButtonText\">Save Note</span>\r" +
     "\n" +
-    "          <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\r" +
+    "          <span class=\"saveButtonIcon\" style=\"display: none;\">\r" +
     "\n" +
-    "          <span class=\"sr-only\">Saving...</span>\r" +
+    "            <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\r" +
     "\n" +
-    "        </span>\r" +
+    "            <span class=\"sr-only\">Saving...</span>\r" +
     "\n" +
-    "      </button>\r" +
+    "          </span>\r" +
+    "\n" +
+    "        </button>\r" +
+    "\n" +
+    "      </div>\r" +
     "\n" +
     "    </div>\r" +
     "\n" +
     "  </fieldset>\r" +
     "\n" +
-    "\r" +
+    "  \r" +
     "\n" +
     "  <fieldset class=\"form-group\">\r" +
     "\n" +
@@ -250,33 +269,37 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "\n" +
     "  <fieldset ng-show=\"!editNoteCtrl.showWarning\" class=\"form-group buttonGroup\">\r" +
     "\n" +
-    "    <div class=\"col-xs-6 padding-left-0\">\r" +
+    "    <div class=\"form-row\">\r" +
     "\n" +
-    "      <input type=\"button\" ng-click=\"editNoteCtrl.showDeleteWarning()\"\r" +
+    "      <div class=\"col-6 padding-left-0\">\r" +
     "\n" +
-    "        class=\"btn btn-sm btn-danger\" role=\"button\" value=\"Delete Note\" />\r" +
+    "        <input type=\"button\" ng-click=\"editNoteCtrl.showDeleteWarning()\"\r" +
+    "\n" +
+    "          class=\"btn btn-sm btn-danger\" role=\"button\" value=\"Delete Note\" />\r" +
+    "\n" +
+    "      </div>\r" +
+    "\n" +
+    "      <div class=\"col-6 d-flex justify-content-end padding-right-0\">\r" +
+    "\n" +
+    "        <button type=\"submit\" class=\"btn btn-primary saveButton\">\r" +
+    "\n" +
+    "          <span class=\"saveButtonText\">Save Note</span>\r" +
+    "\n" +
+    "          <span class=\"saveButtonIcon\" style=\"display: none;\">\r" +
+    "\n" +
+    "            <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\r" +
+    "\n" +
+    "            <span class=\"sr-only\">Saving...</span>\r" +
+    "\n" +
+    "          </span>\r" +
+    "\n" +
+    "        </button>\r" +
+    "\n" +
+    "      </div>\r" +
     "\n" +
     "    </div>\r" +
     "\n" +
-    "    <div class=\"col-xs-6 padding-right-0\">\r" +
-    "\n" +
-    "      <button type=\"submit\" class=\"btn btn-primary pull-xs-right saveButton\">\r" +
-    "\n" +
-    "        <span class=\"saveButtonText\">Save Note</span>\r" +
-    "\n" +
-    "        <span class=\"saveButtonIcon\" style=\"display: none;\">\r" +
-    "\n" +
-    "          <i class=\"fa fa-spinner fa-pulse fa-lg\"></i>\r" +
-    "\n" +
-    "          <span class=\"sr-only\">Saving...</span>\r" +
-    "\n" +
-    "        </span>\r" +
-    "\n" +
-    "      </button>\r" +
-    "\n" +
-    "    </div>\r" +
-    "\n" +
-    "  </fieldset>\r" +
+    "    </fieldset>\r" +
     "\n" +
     "\r" +
     "\n" +
@@ -406,7 +429,7 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('js/templates/login.html',
-    "<div>\r" +
+    "<div class=\"row\">\r" +
     "\n" +
     "  <div class=\"col-md-7\">\r" +
     "\n" +
@@ -605,23 +628,27 @@ angular.module('NoteFire').run(['$templateCache', function($templateCache) {
     "\n" +
     "\r" +
     "\n" +
-    "<div class=\"col-sm-10 col-xs-9\">\r" +
+    "<div class=\"row\">\r" +
     "\n" +
-    "  <h3>{{ viewNoteCtrl.note.title }}</h3>\r" +
+    "  <div class=\"col-9\">\r" +
     "\n" +
-    "</div>\r" +
+    "    <h3>{{ viewNoteCtrl.note.title }}</h3>\r" +
+    "\n" +
+    "  </div>\r" +
     "\n" +
     "\r" +
     "\n" +
-    "<div class=\"col-sm-2 col-xs-3\">\r" +
+    "  <div class=\"col-3 d-flex justify-content-end\">\r" +
     "\n" +
-    "  <a ng-href=\"#/edit/{{ viewNoteCtrl.note.$id }}\" title=\"Edit Note\">\r" +
+    "    <a ng-href=\"#/edit/{{ viewNoteCtrl.note.$id }}\" title=\"Edit Note\">\r" +
     "\n" +
-    "    <i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i>\r" +
+    "      <i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i>\r" +
     "\n" +
-    "    Edit\r" +
+    "      Edit\r" +
     "\n" +
-    "  </a>\r" +
+    "    </a>\r" +
+    "\n" +
+    "  </div>\r" +
     "\n" +
     "</div>\r" +
     "\n" +

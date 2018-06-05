@@ -6,8 +6,6 @@ To see NoteFire in action, visit [notefireapp.com](https://www.notefireapp.com)
 
 To see what I have planned for NoteFire, see the [Product Backlog](https://github.com/bobzurad/NoteFire/wiki/Product-Backlog)
 
-For the Development Demo that spawned this, see [NoteFireDev](https://github.com/bobzurad/NoteFireDev)
-
 ## Development ##
 Developing this project requires
 * [node.js](https://nodejs.org/)
