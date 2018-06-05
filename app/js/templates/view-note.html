@@ -1,14 +1,16 @@
 <public-warning></public-warning>
 
-<div class="col-sm-10 col-xs-9">
-  <h3>{{ viewNoteCtrl.note.title }}</h3>
-</div>
+<div class="row">
+  <div class="col-9">
+    <h3>{{ viewNoteCtrl.note.title }}</h3>
+  </div>
 
-<div class="col-sm-2 col-xs-3">
-  <a ng-href="#/edit/{{ viewNoteCtrl.note.$id }}" title="Edit Note">
-    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-    Edit
-  </a>
+  <div class="col-3 d-flex justify-content-end">
+    <a ng-href="#/edit/{{ viewNoteCtrl.note.$id }}" title="Edit Note">
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      Edit
+    </a>
+  </div>
 </div>
 
 <div class="col-xs-12 padding-left-0 padding-right-0">

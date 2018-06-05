@@ -16,19 +16,19 @@
   </head>
 
   <body ng-app="NoteFire">
+    <header>
+      <nav-bar></nav-bar>
+    </header>
 
-    <nav-bar></nav-bar>
-
-    <div class="album container" >
+    <main role="main" class="album container">
       <!-- main view where templates are rendered -->
       <div ng-view></div>
-    </div>
+    </main>
 
     <notefire-footer></notefire-footer>
 
     <!-- NoteFire dependencies -->
     <script src="libs/jquery/jquery.min.js"></script><!--required by bootstrap.js-->
-    <script src="libs/tether/js/tether.min.js"></script><!--required by bootstrap.js-->
     <script src="libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="libs/tinymce/tinymce.min.js"></script>
     <script src="libs/sjcl/sjcl.js"></script>

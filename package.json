@@ -1,11 +1,11 @@
 {
-  "name": "NoteFire",
+  "name": "notefire",
   "author": {
     "name": "Bob Zurad",
     "url": "https://twitter.com/bobzurad"
   },
   "description": "A simple notes app.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "homepage": "https://www.notefireapp.com/",
   "repository": "https://github.com/bobzurad/NoteFire",
   "private": true,
@@ -16,7 +16,7 @@
     "angular-sanitize": "^1.5.8",
     "angular-ui-tinymce": "0.0.16",
     "angularfire": "^2.0.0",
-    "bootstrap": "4.0.0-alpha.2",
+    "bootstrap": "^4.1.1",
     "express": "^4.14.0",
     "firebase": "^3.0.0",
     "font-awesome": "^4.6.3",
@@ -24,7 +24,7 @@
     "grunt-angular-templates": "^1.1.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-uglify": "^2.0.0",
-    "jquery": "^2.2.0",
+    "jquery": "^3.3.1",
     "requirejs": "^2.1.22",
     "requirejs-text": "^2.0.12",
     "sjcl": "^1.0.3",
@@ -33,8 +33,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "grunt",
     "prestart": "npm install",
     "start": "node server.js",
     "pretest": "npm install"
+  },
+  "dependencies": {
+    "popper.js": "^1.14.3"
   }
 }

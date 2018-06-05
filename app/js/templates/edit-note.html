@@ -3,22 +3,24 @@
 <form name="editNoteForm" ng-submit="editNoteForm.$valid && editNoteCtrl.saveNote()" novalidate>
 
   <fieldset class="form-group">
-    <div class="col-xs-9 padding-left-0">
-      <span class="form-control-label"></span>
-      <input type="text" ng-model="editNoteCtrl.noteTitle" class="form-control"
-              placeholder="Title" maxlength="200" required>
-    </div>
-    <div class="col-xs-3 padding-right-0">
-      <button id="editNoteTitleButton" type="submit" class="btn btn-primary pull-xs-right saveButton">
-        <span class="saveButtonText">Save Note</span>
-        <span class="saveButtonIcon" style="display: none;">
-          <i class="fa fa-spinner fa-pulse fa-lg"></i>
-          <span class="sr-only">Saving...</span>
-        </span>
-      </button>
+    <div class="form-row">
+      <div class="col-9 padding-left-0">
+        <span class="form-control-label"></span>
+        <input type="text" ng-model="editNoteCtrl.noteTitle" class="form-control"
+                placeholder="Title" maxlength="200" required>
+      </div>
+      <div class="col-3 d-flex justify-content-end padding-right-0">
+        <button id="editNoteTitleButton" type="submit" class="btn btn-primary saveButton">
+          <span class="saveButtonText">Save Note</span>
+          <span class="saveButtonIcon" style="display: none;">
+            <i class="fa fa-spinner fa-pulse fa-lg"></i>
+            <span class="sr-only">Saving...</span>
+          </span>
+        </button>
+      </div>
     </div>
   </fieldset>
-
+  
   <fieldset class="form-group">
     <span class="form-control-label"></span>
     <textarea ui-tinymce="editNoteCtrl.tinymceOptions" ng-model="editNoteCtrl.noteContent"
@@ -27,20 +29,22 @@
   </fieldset>
 
   <fieldset ng-show="!editNoteCtrl.showWarning" class="form-group buttonGroup">
-    <div class="col-xs-6 padding-left-0">
-      <input type="button" ng-click="editNoteCtrl.showDeleteWarning()"
-        class="btn btn-sm btn-danger" role="button" value="Delete Note" />
+    <div class="form-row">
+      <div class="col-6 padding-left-0">
+        <input type="button" ng-click="editNoteCtrl.showDeleteWarning()"
+          class="btn btn-sm btn-danger" role="button" value="Delete Note" />
+      </div>
+      <div class="col-6 d-flex justify-content-end padding-right-0">
+        <button type="submit" class="btn btn-primary saveButton">
+          <span class="saveButtonText">Save Note</span>
+          <span class="saveButtonIcon" style="display: none;">
+            <i class="fa fa-spinner fa-pulse fa-lg"></i>
+            <span class="sr-only">Saving...</span>
+          </span>
+        </button>
+      </div>
     </div>
-    <div class="col-xs-6 padding-right-0">
-      <button type="submit" class="btn btn-primary pull-xs-right saveButton">
-        <span class="saveButtonText">Save Note</span>
-        <span class="saveButtonIcon" style="display: none;">
-          <i class="fa fa-spinner fa-pulse fa-lg"></i>
-          <span class="sr-only">Saving...</span>
-        </span>
-      </button>
-    </div>
-  </fieldset>
+    </fieldset>
 
   <fieldset ng-show="editNoteCtrl.showWarning" class="form-group deleteWarning">
     <div class="col-xs-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">

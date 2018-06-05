@@ -1,24 +1,24 @@
-module.exports = function(grunt) {
-  //project config
+module.exports = function (grunt) {
+  // project config
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    //ngtemplates config
+    // ngtemplates config
     ngtemplates: {
       NoteFire: {
-        cwd: "app/",
+        cwd: 'app/',
         src: [
-          "js/directives/*.html",
-          "js/templates/*.html"
+          'js/directives/*.html',
+          'js/templates/*.html'
         ],
-        dest: "_deploy/templates.js"
+        dest: '_deploy/templates.js'
       }
     },
-    //concat config
+    // concat config
     concat: {
       libs: {
-        //libs that we're not using a CDN
+        // libs that we're not using a CDN
         src: [
-          'app/libs/angular-ui-tinymce/tinymce.js', //don't use the .min file until issue #264 is fixed https://github.com/angular-ui/ui-tinymce/issues/264
+          'app/libs/angular-ui-tinymce/tinymce.js' // don't use the .min file until issue #264 is fixed https://github.com/angular-ui/ui-tinymce/issues/264
         ],
         dest: '_deploy/libs.js'
       },
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
         dest: '_deploy/app.css'
       }
     },
-    //uglify config
+    // uglify config
     uglify: {
       app: {
         src: ['_deploy/app.js'],
@@ -53,13 +53,13 @@ module.exports = function(grunt) {
         dest: '_deploy/libs.js'
       }
     }
-  });
+  })
 
-  //load tasks
-  grunt.loadNpmTasks('grunt-angular-templates');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  // load tasks
+  grunt.loadNpmTasks('grunt-angular-templates')
+  grunt.loadNpmTasks('grunt-contrib-concat')
+  grunt.loadNpmTasks('grunt-contrib-uglify')
 
-  //register default task
-  grunt.registerTask('default', ['ngtemplates', 'concat', 'uglify']);
-};
+  // register default task
+  grunt.registerTask('default', ['ngtemplates', 'concat', 'uglify'])
+}
