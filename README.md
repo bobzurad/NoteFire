@@ -9,7 +9,6 @@ To see what I have planned for NoteFire, see the [Product Backlog](https://githu
 ## Development ##
 Developing this project requires
 * [node.js](https://nodejs.org/)
-* [grunt](https://www.npmjs.com/package/grunt)
 * A [firebase](https://firebase.google.com) account
   * Only needed if you want to write to your own firebase.
   * Install [firebase-tools](https://www.npmjs.com/package/firebase-tools) to deploy to your own firebase account
@@ -40,12 +39,15 @@ FirebaseConfig: {
 }
 ```
 
-### Deploying to Firebase ###
-Before deploying to your firebase instance, update the files in \_deploy. To do this, run:
+### Building ###
+To generate min files that you can deploy, run: 
 ```bash
 $ npm run build
 ```
-To deploy the files in \_deploy to Firebaes, run:
+Build files are placed in the \_deploy folder.
+
+### Deploying to Firebase ###
+Files in the \_deploy folder are deployed to firebase with:
 ```bash
 $ firebase deploy
 ```

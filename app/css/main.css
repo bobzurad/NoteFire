@@ -29,9 +29,6 @@ footer {
   a.navbar-brand {
     padding-right: 0;
   }
-  footer {
-    height: 75px;
-  }
 }
 
 .navbar {
@@ -61,7 +58,7 @@ footer {
 }
 
 .album {
-  padding-top: 5rem;
+  padding-top: 1rem;
   background-color: #f7f7f7;
 }
 
